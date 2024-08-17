@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b604b2rsnlmpy"]
+[gd_scene load_steps=5 format=3 uid="uid://b604b2rsnlmpy"]
 
+[ext_resource type="Script" path="res://Scripts/scale_zone.gd" id="1_6l7sw"]
 [ext_resource type="Texture2D" uid="uid://cafcd1k01twp8" path="res://Sprites/GraySquare.png" id="1_8u4ff"]
+[ext_resource type="Texture2D" uid="uid://d2iys8uwpxqp7" path="res://Sprites/flashlight_reverse.png" id="3_65k4s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ny1o"]
 
 [node name="ScaleZone" type="Area2D"]
 modulate = Color(1, 1, 1, 0.486275)
+script = ExtResource("1_6l7sw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_8u4ff")
@@ -13,3 +16,8 @@ texture = ExtResource("1_8u4ff")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.52506, 1.52506)
 shape = SubResource("RectangleShape2D_7ny1o")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+energy = 4.0
+texture = ExtResource("3_65k4s")
