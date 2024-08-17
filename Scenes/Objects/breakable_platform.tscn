@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://7brsp21cojoa"]
+
+[ext_resource type="Texture2D" uid="uid://bbvjdy7g48u43" path="res://Sprites/BreakingSquare.png" id="1_5tsv8"]
+[ext_resource type="Script" path="res://Scenes/Objects/breakable_platform.gd" id="1_i8145"]
+[ext_resource type="PackedScene" uid="uid://ohvkenw5imen" path="res://Scenes/Objects/weight_area.tscn" id="3_5qek5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6pk1"]
+
+[node name="BreakablePlatform" type="StaticBody2D"]
+script = ExtResource("1_i8145")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5tsv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.60001, 1.60001)
+shape = SubResource("RectangleShape2D_y6pk1")
+
+[node name="WeightArea" parent="." instance=ExtResource("3_5qek5")]
+
+[node name="BreakSound" type="AudioStreamPlayer" parent="."]
