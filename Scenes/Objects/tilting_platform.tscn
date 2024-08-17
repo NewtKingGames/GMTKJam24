@@ -9,7 +9,7 @@
 
 [node name="TiltingPlatform" type="StaticBody2D"]
 modulate = Color(1, 0.517647, 0, 1)
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 script = ExtResource("1_hasvl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -31,11 +31,11 @@ scale = Vector2(1.9, 1.12)
 [node name="DeleteMe" type="Node" parent="."]
 
 [node name="Ball" parent="DeleteMe" instance=ExtResource("4_5vf6l")]
-position = Vector2(-68, -140)
+position = Vector2(-350, -467)
 current_scale = 2.0
 
 [node name="Ball2" parent="DeleteMe" instance=ExtResource("4_5vf6l")]
-position = Vector2(118, -143)
+position = Vector2(336, -486)
 
 [node name="Camera2D" type="Camera2D" parent="DeleteMe"]
 position = Vector2(8, -110)

@@ -10,6 +10,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixf3m"]
 
 [node name="BasicScalePlatform" type="StaticBody2D" groups=["scales"]]
+scale = Vector2(4, 4)
 script = ExtResource("1_grtd1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

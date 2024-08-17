@@ -38,17 +38,17 @@ scale = Vector2(13.04, 1)
 
 [node name="Ball" parent="Balls" index="0" instance=ExtResource("4_g1g0l")]
 position = Vector2(92, -436)
+current_scale = 2.0
 
 [node name="Ball2" parent="Balls" index="1" instance=ExtResource("4_g1g0l")]
 position = Vector2(-723, -328)
-current_scale = 1.0
 
 [node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_a25kc")]
-position = Vector2(1024, -120)
+position = Vector2(896, -120)
 scale = Vector2(1.9, 1.9)
 
 [node name="ScaleZoneGrow3" parent="Zones" index="1" instance=ExtResource("4_a25kc")]
-position = Vector2(1024, -205)
+position = Vector2(896, -205)
 scale = Vector2(1.9, 1.9)
 
 [node name="ScaleZoneGrow4" parent="Zones" index="2" instance=ExtResource("4_a25kc")]
@@ -57,11 +57,11 @@ scale = Vector2(1.9, 1.9)
 is_locked_in_place = true
 
 [node name="ScaleZoneShrink2" parent="Zones" index="3" instance=ExtResource("5_2n8fq")]
-position = Vector2(1024, -44)
+position = Vector2(896, -44)
 scale = Vector2(1.9, 1.9)
 
 [node name="ScaleZoneShrink3" parent="Zones" index="4" instance=ExtResource("5_2n8fq")]
-position = Vector2(1026, 38)
+position = Vector2(898, 38)
 scale = Vector2(1.9, 1.9)
 
 [node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("2_mcyg3")]
