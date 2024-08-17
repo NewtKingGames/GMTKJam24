@@ -7,3 +7,4 @@
 
 [node name="ScaleParticleEffect" parent="." index="0"]
 texture = ExtResource("2_1mwqu")
+gravity = Vector2(2.08165e-12, -200)

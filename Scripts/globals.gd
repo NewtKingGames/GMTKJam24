@@ -1,3 +1,3 @@
 extends Node
 
-var scale_duration: float = 1.0
+var scale_duration: float = 1.5

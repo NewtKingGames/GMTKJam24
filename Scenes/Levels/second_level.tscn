@@ -52,7 +52,7 @@ position = Vector2(1024, -205)
 scale = Vector2(1.9, 1.9)
 
 [node name="ScaleZoneGrow4" parent="Zones" index="2" instance=ExtResource("4_a25kc")]
-position = Vector2(-700, 135)
+position = Vector2(-688, 143)
 scale = Vector2(1.9, 1.9)
 is_locked_in_place = true
 
