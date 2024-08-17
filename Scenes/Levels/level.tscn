@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://belg3ygdqvmwv"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_v0nyq"]
+[ext_resource type="Script" path="res://Scripts/weight_scale_tracker.gd" id="2_p0vxm"]
+[ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="3_5la5x"]
+[ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="4_5ip7i"]
+[ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="5_6ic1v"]
+[ext_resource type="PackedScene" uid="uid://bodowffk2hyev" path="res://Scenes/Objects/scale_zone_shrink.tscn" id="6_1cjt6"]
+[ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="7_pgks1"]
+[ext_resource type="FontFile" uid="uid://banw55tp6ocuu" path="res://Fonts/PixelOperator8-Bold.ttf" id="8_kx8ci"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_v0nyq")
+
+[node name="WeightScaleTracker" type="Node" parent="."]
+script = ExtResource("2_p0vxm")
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("3_5la5x")]
+position = Vector2(-254, -179)
+rotation = 2.29353
+scale = Vector2(-13.0182, -0.758343)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("3_5la5x")]
+position = Vector2(-559, -126)
+rotation = 1.57079
+scale = Vector2(-13.0182, -0.758343)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("3_5la5x")]
+position = Vector2(341, 129)
+rotation = 1.57079
+scale = Vector2(-13.0182, -0.758343)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("3_5la5x")]
+position = Vector2(78, -165)
+rotation = -0.723311
+scale = Vector2(-13.0182, -0.758343)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("3_5la5x")]
+position = Vector2(-92, 162)
+rotation = 0.457846
+scale = Vector2(-13.0182, -0.758343)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Balls" type="Node" parent="."]
+
+[node name="Ball" parent="Balls" instance=ExtResource("4_5ip7i")]
+position = Vector2(-261, -397)
+
+[node name="Ball2" parent="Balls" instance=ExtResource("4_5ip7i")]
+position = Vector2(154, -468)
+
+[node name="Ball3" parent="Balls" instance=ExtResource("4_5ip7i")]
+position = Vector2(520, -414)
+
+[node name="Zones" type="Node" parent="."]
+
+[node name="ScaleZoneGrow" parent="Zones" instance=ExtResource("5_6ic1v")]
+position = Vector2(981, -278)
+scale = Vector2(2.10977, 2.10977)
+
+[node name="ScaleZoneGrow2" parent="Zones" instance=ExtResource("5_6ic1v")]
+position = Vector2(1005, 29)
+scale = Vector2(2.10977, 2.10977)
+
+[node name="ScaleZoneShrink" parent="Zones" instance=ExtResource("6_1cjt6")]
+position = Vector2(1003, -67)
+scale = Vector2(2.79167, 2.79167)
+
+[node name="ScaleZoneShrink2" parent="Zones" instance=ExtResource("6_1cjt6")]
+position = Vector2(997, -174)
+scale = Vector2(2.79167, 2.79167)
+
+[node name="Scales" type="Node" parent="."]
+
+[node name="BasicScalePlatform" parent="Scales" instance=ExtResource("7_pgks1")]
+position = Vector2(-470, 50)
+scale = Vector2(2.96154, 2.96154)
+goal_weight = 8.0
+
+[node name="BasicScalePlatform2" parent="Scales" instance=ExtResource("7_pgks1")]
+position = Vector2(197, 292)
+scale = Vector2(2.96154, 2.96154)
+goal_weight = 2.0
+
+[node name="BasicScalePlatform3" parent="Scales" instance=ExtResource("7_pgks1")]
+position = Vector2(513, 510)
+scale = Vector2(2.96154, 2.96154)
+goal_weight = 4.0
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -188.0
+offset_top = -26.0
+offset_right = 214.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("8_kx8ci")
+theme_override_font_sizes/font_size = 63
+text = "You win
+"
+vertical_alignment = 1
