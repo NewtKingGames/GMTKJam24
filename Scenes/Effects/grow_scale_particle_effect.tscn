@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7qqir1vns4ic"]
+
+[ext_resource type="PackedScene" uid="uid://dlevro5gkjt7k" path="res://Scenes/Effects/scale_particle_effect.tscn" id="1_2tcv1"]
+[ext_resource type="Texture2D" uid="uid://car43wkd3xvpa" path="res://Sprites/grow_effect.png" id="2_1mwqu"]
+
+[node name="GrowScaleParticleEffect" instance=ExtResource("1_2tcv1")]
+
+[node name="ScaleParticleEffect" parent="." index="0"]
+texture = ExtResource("2_1mwqu")

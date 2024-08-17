@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlevro5gkjt7k"]
+
+[sub_resource type="Gradient" id="Gradient_mwcyq"]
+colors = PackedColorArray(1, 1, 1, 1, 0.572549, 0.572549, 0.568627, 0.65098)
+
+[node name="ScaleParticleEffectNode" type="Node2D"]
+
+[node name="ScaleParticleEffect" type="CPUParticles2D" parent="."]
+amount = 4
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(2.08165e-12, -100)
+scale_amount_min = 0.5
+color_ramp = SubResource("Gradient_mwcyq")

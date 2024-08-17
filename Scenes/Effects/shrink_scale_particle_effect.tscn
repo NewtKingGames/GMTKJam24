@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://crorrc1p5qnkd"]
+
+[ext_resource type="PackedScene" uid="uid://dlevro5gkjt7k" path="res://Scenes/Effects/scale_particle_effect.tscn" id="1_yk3cx"]
+[ext_resource type="Texture2D" uid="uid://cqw1e4jmjymgj" path="res://Sprites/shrink_effect.png" id="2_v0c6f"]
+
+[node name="ShrinkScaleParticleEffect" instance=ExtResource("1_yk3cx")]
+
+[node name="ScaleParticleEffect" parent="." index="0"]
+texture = ExtResource("2_v0c6f")
+gravity = Vector2(2.08165e-12, 100)
