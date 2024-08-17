@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvyhri8ufdvyf"]
+[gd_scene load_steps=9 format=3 uid="uid://dvyhri8ufdvyf"]
 
 [ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="1_7oh6f"]
 [ext_resource type="Script" path="res://Scripts/weight_scale_tracker.gd" id="1_l7tun"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="3_5l8p5"]
 [ext_resource type="PackedScene" uid="uid://bodowffk2hyev" path="res://Scenes/Objects/scale_zone_shrink.tscn" id="4_d70p2"]
 [ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="5_v8d71"]
+[ext_resource type="FontFile" uid="uid://banw55tp6ocuu" path="res://Fonts/PixelOperator8-Bold.ttf" id="8_jwala"]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_yp4o7")
@@ -59,19 +60,19 @@ position = Vector2(520, -414)
 [node name="Zones" type="Node" parent="."]
 
 [node name="ScaleZoneGrow" parent="Zones" instance=ExtResource("3_5l8p5")]
-position = Vector2(-259, -306)
+position = Vector2(981, -278)
 scale = Vector2(2.10977, 2.10977)
 
 [node name="ScaleZoneGrow2" parent="Zones" instance=ExtResource("3_5l8p5")]
-position = Vector2(515, 85)
+position = Vector2(1005, 29)
 scale = Vector2(2.10977, 2.10977)
 
 [node name="ScaleZoneShrink" parent="Zones" instance=ExtResource("4_d70p2")]
-position = Vector2(77, -255)
+position = Vector2(1003, -67)
 scale = Vector2(2.79167, 2.79167)
 
 [node name="ScaleZoneShrink2" parent="Zones" instance=ExtResource("4_d70p2")]
-position = Vector2(521, -232)
+position = Vector2(997, -174)
 scale = Vector2(2.79167, 2.79167)
 
 [node name="Scales" type="Node" parent="."]
@@ -90,3 +91,15 @@ goal_weight = 2.0
 position = Vector2(513, 510)
 scale = Vector2(2.96154, 2.96154)
 goal_weight = 4.0
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -188.0
+offset_top = -26.0
+offset_right = 214.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("8_jwala")
+theme_override_font_sizes/font_size = 63
+text = "You win
+"
+vertical_alignment = 1
