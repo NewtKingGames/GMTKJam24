@@ -8,7 +8,6 @@ var goal_has_been_hit: bool = false
 var current_weight: float = 0.0:
 	set(value):
 		current_weight = value
-		print("set the new weight")
 		area_weight_changed.emit(current_weight)
 
 func add_object_to_scale(object: ScalableObject):
@@ -33,8 +32,7 @@ func compute_weight_of_objects() -> float:
 
 # TODO - slowdown the objects when they land on the scale!!!
 func _on_scale_area_body_entered(body: Node2D):
-	print("body landed on scale!")
-	# TODO - need to change this so it doesn't always happen
+	# TODO - need to change this so it doesn't always happen i.e. on breakable platform
 	if body is ScalableObject:
 		# This might cause issues if the object is the player? not sure
 		body.linear_velocity = Vector2.ZERO

@@ -1,5 +1,5 @@
 class_name ScalePlatform extends StaticBody2D
-@onready var scale_area = $ScaleArea
+@onready var weight_area = $WeightArea
 
 signal scale_goal_hit()
 signal scale_goal_lost()
@@ -15,7 +15,7 @@ var current_weight: float = 0.0:
 		current_weight = value
 
 func _ready():
-	scale_area.connect("area_weight_changed", on_area_weight_changed)
+	weight_area.connect("area_weight_changed", on_area_weight_changed)
 
 
 func on_area_weight_changed(weight: float):
