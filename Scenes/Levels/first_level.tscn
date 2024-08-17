@@ -29,11 +29,12 @@ position = Vector2(885, -513)
 
 [node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_368d0")]
 position = Vector2(-791, -290)
-scale = Vector2(-2.68428, -2.68428)
+scale = Vector2(2.684, 2.684)
+is_locked_in_place = true
 
 [node name="ScaleZoneGrow2" parent="Zones" index="1" instance=ExtResource("4_368d0")]
 position = Vector2(214, -426)
-scale = Vector2(-2.68428, -2.68428)
+scale = Vector2(2.684, 2.684)
 
 [node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("3_jo2ae")]
 position = Vector2(-249, 152)

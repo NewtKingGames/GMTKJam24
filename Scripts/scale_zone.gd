@@ -1,11 +1,17 @@
 class_name ScaleZone extends Area2D
 
 @onready var point_light_2d = $PointLight2D
+@onready var lock_icon_sprite = $LockIconSprite
+@onready var error_sound = $ErrorSound
+@onready var click_sound = $ClickSound
 
 var scale_factor: float
+# Set this to true to prevent the player from moving it and render a small lock on the object
+@export var is_locked_in_place: bool = false
 var is_held_by_player: bool = false
 
 func _ready():
+	lock_icon_sprite.visible = is_locked_in_place
 	point_light_2d.color = self.modulate
 	# Subscribe signals
 	body_entered.connect(_on_body_entered_scale_zone)
@@ -30,8 +36,13 @@ func _on_mouse_exited():
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton and event.is_pressed():
+		if is_locked_in_place:
+			error_sound.play()
+			return
 		# Toggle is_held_player
 		#TODO: current solution is oging to allow players to grab multiple areas at a time
+		click_sound.pitch_scale = randf_range(0.8, 1.2)
+		click_sound.play()
 		is_held_by_player = !is_held_by_player
 
 func scale_object(body: ScalableObject):

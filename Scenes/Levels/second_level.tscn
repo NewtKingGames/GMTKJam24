@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnkeyduwbqc7x"]
+[gd_scene load_steps=3 format=3 uid="uid://bnkeyduwbqc7x"]
 
 [ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_wcc5n"]
+[ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="2_nvatl"]
 
 [node name="SecondLevel" instance=ExtResource("1_wcc5n")]
 
-[node name="Label" parent="." index="6"]
-visible = true
+[node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_nvatl")]
