@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://do0jxgdl0c466"]
+[gd_scene load_steps=8 format=3 uid="uid://do0jxgdl0c466"]
 
 [ext_resource type="Script" path="res://Scripts/scale.gd" id="1_28jlb"]
 [ext_resource type="Texture2D" uid="uid://cafcd1k01twp8" path="res://Sprites/GraySquare.png" id="2_0jxji"]
 [ext_resource type="Script" path="res://Scenes/Objects/scale_weight_label.gd" id="3_b0esl"]
+[ext_resource type="FontFile" uid="uid://banw55tp6ocuu" path="res://Fonts/PixelOperator8-Bold.ttf" id="3_u47wh"]
+[ext_resource type="Script" path="res://Scenes/Objects/scale_goal_weight_label.gd" id="4_oykgq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixf3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgvvo"]
 size = Vector2(20, 14.3068)
 
-[node name="BasicScalePlatform" type="StaticBody2D"]
+[node name="BasicScalePlatform" type="StaticBody2D" groups=["scales"]]
 script = ExtResource("1_28jlb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -27,14 +29,30 @@ collision_mask = 5
 position = Vector2(0, -7.5)
 scale = Vector2(3.35909, 0.908656)
 shape = SubResource("RectangleShape2D_hgvvo")
-debug_color = Color(0.300091, 0.628304, 6.36511e-08, 0.42)
+debug_color = Color(0.631853, 0.369543, 0.952534, 0.42)
 
 [node name="ScaleWeightLabel" type="Label" parent="."]
-offset_left = -21.0
-offset_top = -52.0
-offset_right = 19.0
-offset_bottom = -29.0
+offset_left = -148.0
+offset_top = 43.0
+offset_right = 134.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("3_u47wh")
+theme_override_font_sizes/font_size = 8
+text = "Current Weight is: 0"
+horizontal_alignment = 1
 script = ExtResource("3_b0esl")
+
+[node name="ScaleGoalWeightLabel" type="Label" parent="."]
+offset_left = -137.0
+offset_top = 20.0
+offset_right = 95.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_u47wh")
+theme_override_font_sizes/font_size = 8
+text = "Goal Weight is: 0
+"
+horizontal_alignment = 1
+script = ExtResource("4_oykgq")
 
 [connection signal="scale_weight_changed" from="." to="ScaleWeightLabel" method="_on_basic_scale_platform_scale_weight_changed"]
 [connection signal="body_entered" from="ScaleArea" to="." method="_on_scale_area_body_entered"]
