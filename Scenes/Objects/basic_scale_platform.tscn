@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://do0jxgdl0c466"]
+[gd_scene load_steps=6 format=3 uid="uid://do0jxgdl0c466"]
 
 [ext_resource type="Script" path="res://Scripts/scale.gd" id="1_28jlb"]
 [ext_resource type="Texture2D" uid="uid://cafcd1k01twp8" path="res://Sprites/GraySquare.png" id="2_0jxji"]
+[ext_resource type="Script" path="res://Scenes/Objects/scale_weight_label.gd" id="3_b0esl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixf3m"]
 
@@ -20,9 +21,21 @@ scale = Vector2(3.50287, 0.723546)
 shape = SubResource("RectangleShape2D_ixf3m")
 
 [node name="ScaleArea" type="Area2D" parent="."]
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScaleArea"]
 position = Vector2(0, -7.5)
 scale = Vector2(3.35909, 0.908656)
 shape = SubResource("RectangleShape2D_hgvvo")
 debug_color = Color(0.300091, 0.628304, 6.36511e-08, 0.42)
+
+[node name="ScaleWeightLabel" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -52.0
+offset_right = 19.0
+offset_bottom = -29.0
+script = ExtResource("3_b0esl")
+
+[connection signal="scale_weight_changed" from="." to="ScaleWeightLabel" method="_on_basic_scale_platform_scale_weight_changed"]
+[connection signal="body_entered" from="ScaleArea" to="." method="_on_scale_area_body_entered"]
+[connection signal="body_exited" from="ScaleArea" to="." method="_on_scale_area_body_exited"]
