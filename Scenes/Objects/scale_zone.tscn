@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b604b2rsnlmpy"]
+
+[ext_resource type="Texture2D" uid="uid://cafcd1k01twp8" path="res://Sprites/GraySquare.png" id="1_8u4ff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ny1o"]
+
+[node name="ScaleZone" type="Area2D"]
+modulate = Color(1, 1, 1, 0.486275)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8u4ff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.52506, 1.52506)
+shape = SubResource("RectangleShape2D_7ny1o")

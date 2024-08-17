@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvyhri8ufdvyf"]
+
+[ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="1_7oh6f"]
+[ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="2_idysa"]
+[ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="3_5l8p5"]
+[ext_resource type="PackedScene" uid="uid://bodowffk2hyev" path="res://Scenes/Objects/scale_zone_shrink.tscn" id="4_d70p2"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("1_7oh6f")]
+position = Vector2(-295, -141)
+rotation = 0.392628
+scale = Vector2(-13.0182, -0.758343)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("1_7oh6f")]
+position = Vector2(220, -38)
+rotation = -0.723311
+scale = Vector2(-13.0182, -0.758343)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("1_7oh6f")]
+position = Vector2(-212, 146)
+rotation = 0.152277
+scale = Vector2(-13.0182, -0.758343)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="Balls" type="Node" parent="."]
+
+[node name="Ball" parent="Balls" instance=ExtResource("2_idysa")]
+position = Vector2(-403, -410)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="ScaleZoneGrow" parent="Node" instance=ExtResource("3_5l8p5")]
+position = Vector2(-263, -192)
+scale = Vector2(2.10977, 2.10977)
+
+[node name="ScaleZoneShrink" parent="Node" instance=ExtResource("4_d70p2")]
+position = Vector2(-145, 80)
+scale = Vector2(2.79167, 2.79167)
