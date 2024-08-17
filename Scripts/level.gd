@@ -1,4 +1,5 @@
 class_name Level extends Node2D
+@export var next_scene: PackedScene
 @onready var balls_parent = $Balls
 @onready var weight_scale_tracker = $WeightScaleTracker
 @onready var label = $Label
@@ -28,6 +29,8 @@ func start_level():
 
 func beat_level():
 	label.visible = true
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_packed(next_scene)
 
 func restart_level():
 	get_tree().reload_current_scene()

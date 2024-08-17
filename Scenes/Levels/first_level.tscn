@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6miisatlkaeg"]
+
+[ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_76a7u"]
+[ext_resource type="PackedScene" uid="uid://bnkeyduwbqc7x" path="res://Scenes/Levels/second_level.tscn" id="2_6hn8q"]
+[ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="2_t1w6m"]
+[ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="3_4018k"]
+[ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="3_jo2ae"]
+[ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="4_368d0"]
+[ext_resource type="FontFile" uid="uid://banw55tp6ocuu" path="res://Fonts/PixelOperator8-Bold.ttf" id="6_xqq46"]
+
+[node name="FirstLevel" instance=ExtResource("1_76a7u")]
+next_scene = ExtResource("2_6hn8q")
+
+[node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_t1w6m")]
+position = Vector2(-709, -139)
+rotation = 0.623003
+scale = Vector2(20.68, 1)
+
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("2_t1w6m")]
+position = Vector2(767, -69)
+rotation = 2.84218
+scale = Vector2(20.68, 1)
+
+[node name="Ball" parent="Balls" index="0" instance=ExtResource("3_4018k")]
+position = Vector2(-914, -513)
+
+[node name="Ball2" parent="Balls" index="1" instance=ExtResource("3_4018k")]
+position = Vector2(885, -513)
+
+[node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_368d0")]
+position = Vector2(-791, -290)
+scale = Vector2(-2.68428, -2.68428)
+
+[node name="ScaleZoneGrow2" parent="Zones" index="1" instance=ExtResource("4_368d0")]
+position = Vector2(214, -426)
+scale = Vector2(-2.68428, -2.68428)
+
+[node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("3_jo2ae")]
+position = Vector2(-249, 152)
+scale = Vector2(3.8397, 3.8397)
+goal_weight = 8.0
+
+[node name="BasicScalePlatform2" parent="Scales" index="1" instance=ExtResource("3_jo2ae")]
+position = Vector2(303, 152)
+scale = Vector2(3.8397, 3.8397)
+goal_weight = 8.0
+
+[node name="Label2" type="Label" parent="." index="7"]
+offset_left = -49.0
+offset_top = -548.0
+offset_right = 511.0
+offset_bottom = -513.0
+theme_override_fonts/font = ExtResource("6_xqq46")
+theme_override_font_sizes/font_size = 24
+text = "Click to have the zone follow the mouse. 
+Then click to release"
