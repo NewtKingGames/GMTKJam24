@@ -17,5 +17,6 @@ scale = Vector2(1.60001, 1.60001)
 shape = SubResource("RectangleShape2D_y6pk1")
 
 [node name="WeightArea" parent="." instance=ExtResource("3_5qek5")]
+scale = Vector2(0.485148, 1.6688)
 
 [node name="BreakSound" type="AudioStreamPlayer" parent="."]

@@ -1,7 +1,8 @@
 class_name WeightArea extends Area2D
 
-# TODO - consider making this scene JUST the Area2D and we'll compose it with other scenes later
 signal area_weight_changed(weight: float)
+
+@export var should_slowdown_objects: bool
 # I think this should be a map to make removing the item from the list easier
 var objects_on_area: Dictionary = {}
 var goal_has_been_hit: bool = false
@@ -32,10 +33,9 @@ func compute_weight_of_objects() -> float:
 
 # TODO - slowdown the objects when they land on the scale!!!
 func _on_scale_area_body_entered(body: Node2D):
-	# TODO - need to change this so it doesn't always happen i.e. on breakable platform
 	if body is ScalableObject:
-		# This might cause issues if the object is the player? not sure
-		body.linear_velocity = Vector2.ZERO
+		if should_slowdown_objects:
+			body.linear_velocity = Vector2.ZERO
 		add_object_to_scale(body)
 
 func _on_scale_area_body_exited(body: Node2D):

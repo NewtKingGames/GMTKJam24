@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmn16qtkrgw1n"]
+
+[ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_nylvn"]
+[ext_resource type="PackedScene" uid="uid://7brsp21cojoa" path="res://Scenes/Objects/breakable_platform.tscn" id="2_v780f"]
+[ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="3_ar8th"]
+[ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="4_xt8mc"]
+[ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="5_lrnwh"]
+[ext_resource type="PackedScene" uid="uid://bodowffk2hyev" path="res://Scenes/Objects/scale_zone_shrink.tscn" id="6_cbf7l"]
+
+[node name="FourthLevel" instance=ExtResource("1_nylvn")]
+
+[node name="BreakablePlatform" parent="Platforms" index="0" instance=ExtResource("2_v780f")]
+position = Vector2(-502, -112)
+rotation = 0.443492
+scale = Vector2(9.16, 1)
+weight_limit = 8.0
+
+[node name="Platform" parent="Platforms" index="1" instance=ExtResource("3_ar8th")]
+position = Vector2(-839, -287)
+rotation = 0.501941
+scale = Vector2(14.32, 1)
+
+[node name="Platform2" parent="Platforms" index="2" instance=ExtResource("3_ar8th")]
+position = Vector2(-159, 63)
+rotation = 0.501941
+scale = Vector2(14.32, 1)
+
+[node name="Ball" parent="Balls" index="0" instance=ExtResource("4_xt8mc")]
+position = Vector2(-969, -432)
+
+[node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("5_lrnwh")]
+position = Vector2(-861, -376)
+scale = Vector2(1.9, 1.9)
+is_locked_in_place = true
+
+[node name="ScaleZoneShrink" parent="Zones" index="1" instance=ExtResource("6_cbf7l")]
+position = Vector2(-720, -299)
+scale = Vector2(1.9, 1.9)

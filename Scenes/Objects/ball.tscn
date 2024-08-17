@@ -13,7 +13,7 @@ collision_mask = 5
 gravity_scale = 0.5
 contact_monitor = true
 script = ExtResource("1_nsfd7")
-current_scale = 2.0
+current_scale = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_atq4e")

@@ -44,5 +44,6 @@ horizontal_alignment = 1
 script = ExtResource("4_oykgq")
 
 [node name="WeightArea" parent="." instance=ExtResource("6_72x3o")]
+should_slowdown_objects = true
 
 [connection signal="area_weight_changed" from="WeightArea" to="ScaleWeightLabel" method="_on_basic_scale_platform_scale_weight_changed"]
