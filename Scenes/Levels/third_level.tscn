@@ -84,3 +84,4 @@ scale = Vector2(1.9, 1.9)
 [node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("3_12hwg")]
 position = Vector2(508, 449)
 scale = Vector2(5.36514, 3.81285)
+goal_weight = 4.0

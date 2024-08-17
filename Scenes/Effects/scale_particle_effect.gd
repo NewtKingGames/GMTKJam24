@@ -15,8 +15,6 @@ func stop_particle_effects():
 func change_scale_of_particle_effect(scale_factor: float):
 	# Have these be done with tweens
 	var tween: Tween = create_tween()
-	print("scale factor is")
-	print(scale_factor)
 	tween.parallel().tween_property(scale_particle_effect, "emission_sphere_radius", scale_particle_effect.emission_sphere_radius * scale_factor, Globals.scale_duration)
 	tween.parallel().tween_property(scale_particle_effect, "scale_amount_min", scale_particle_effect.scale_amount_min * scale_factor, Globals.scale_duration)
 	tween.parallel().tween_property(scale_particle_effect, "scale_amount_max", scale_particle_effect.scale_amount_max * scale_factor, Globals.scale_duration)
