@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvyhri8ufdvyf"]
+[gd_scene load_steps=8 format=3 uid="uid://dvyhri8ufdvyf"]
 
 [ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="1_7oh6f"]
 [ext_resource type="Script" path="res://Scripts/weight_scale_tracker.gd" id="1_l7tun"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_yp4o7"]
 [ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="2_idysa"]
 [ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="3_5l8p5"]
 [ext_resource type="PackedScene" uid="uid://bodowffk2hyev" path="res://Scenes/Objects/scale_zone_shrink.tscn" id="4_d70p2"]
 [ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="5_v8d71"]
 
 [node name="TestLevel" type="Node2D"]
+script = ExtResource("1_yp4o7")
 
 [node name="WeightScaleTracker" type="Node" parent="."]
 script = ExtResource("1_l7tun")

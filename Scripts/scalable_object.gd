@@ -1,4 +1,4 @@
-extends PhysicsBody2D # Consider changing to rigidbody 2D if you have to
+extends RigidBody2D # Consider changing to rigidbody 2D if you have to
 class_name ScalableObject
 
 signal scale_changed(current_scale: float)
