@@ -5,7 +5,7 @@ signal scale_changed(current_scale: float)
 
 # This class should be added as the top level script of every object in the game it proveides things for:
 # The current "scale" of the object which affects things like weight and size and maybe speed. The effects of size should be set in the classes which extend this
-var current_scale: float
+@export var current_scale: float
 var base_weight: float
 
 # TODO implement some kind of weight system with child classes implementing "base weight"
