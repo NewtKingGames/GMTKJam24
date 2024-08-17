@@ -55,3 +55,13 @@ theme_override_fonts/font = ExtResource("6_xqq46")
 theme_override_font_sizes/font_size = 24
 text = "Click to have the zone follow the mouse. 
 Then click to release"
+
+[node name="Label3" type="Label" parent="." index="8"]
+offset_left = -911.0
+offset_top = -408.0
+offset_right = -14.0
+offset_bottom = -357.0
+theme_override_fonts/font = ExtResource("6_xqq46")
+theme_override_font_sizes/font_size = 24
+text = "Some areas are locked and cannot be moved
+"
