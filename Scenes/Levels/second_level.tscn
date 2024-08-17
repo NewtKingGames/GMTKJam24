@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnkeyduwbqc7x"]
+[gd_scene load_steps=8 format=3 uid="uid://bnkeyduwbqc7x"]
 
 [ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_wcc5n"]
 [ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="2_mcyg3"]
 [ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="2_nvatl"]
+[ext_resource type="PackedScene" uid="uid://xngflg7iogv" path="res://Scenes/Levels/third_level.tscn" id="2_yp26j"]
 [ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="4_a25kc"]
 [ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="4_g1g0l"]
 [ext_resource type="PackedScene" uid="uid://bodowffk2hyev" path="res://Scenes/Objects/scale_zone_shrink.tscn" id="5_2n8fq"]
 
 [node name="SecondLevel" instance=ExtResource("1_wcc5n")]
+next_scene = ExtResource("2_yp26j")
 
 [node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_nvatl")]
 position = Vector2(-721, -143)

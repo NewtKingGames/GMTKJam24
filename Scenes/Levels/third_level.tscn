@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://xngflg7iogv"]
+
+[ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_hvh6w"]
+[ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="2_0to08"]
+[ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="3_4gnmb"]
+[ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="3_12hwg"]
+[ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="4_j2hdj"]
+[ext_resource type="PackedScene" uid="uid://bodowffk2hyev" path="res://Scenes/Objects/scale_zone_shrink.tscn" id="5_erkah"]
+
+[node name="ThirdLevel" instance=ExtResource("1_hvh6w")]
+
+[node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_0to08")]
+position = Vector2(-327, -265)
+rotation = -0.461547
+scale = Vector2(16.3895, 1.37897)
+
+[node name="Platform8" parent="Platforms" index="1" instance=ExtResource("2_0to08")]
+position = Vector2(351, 180)
+rotation = 0.23715
+scale = Vector2(14.2958, 1.37897)
+
+[node name="Platform3" parent="Platforms" index="2" instance=ExtResource("2_0to08")]
+position = Vector2(-788, 40)
+rotation = 0.294798
+scale = Vector2(20.7703, 1.37897)
+
+[node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_0to08")]
+position = Vector2(31, 253)
+rotation = 0.253397
+scale = Vector2(20.7703, 1.37897)
+
+[node name="Platform5" parent="Platforms" index="4" instance=ExtResource("2_0to08")]
+position = Vector2(-439, 278)
+rotation = 0.253397
+scale = Vector2(8.15767, 1.39183)
+
+[node name="Platform6" parent="Platforms" index="5" instance=ExtResource("2_0to08")]
+position = Vector2(-496, 242)
+rotation = 1.85028
+scale = Vector2(8.15767, 1.39183)
+
+[node name="Platform7" parent="Platforms" index="6" instance=ExtResource("2_0to08")]
+position = Vector2(-304, 275)
+rotation = 1.85028
+scale = Vector2(8.15767, 1.39183)
+
+[node name="Platform2" parent="Platforms" index="7" instance=ExtResource("2_0to08")]
+position = Vector2(-934, -494)
+rotation = 0.286225
+scale = Vector2(21.5555, 1.62183)
+
+[node name="Ball" parent="Balls" index="0" instance=ExtResource("3_4gnmb")]
+position = Vector2(-1062, -624)
+current_scale = 1.0
+
+[node name="Ball2" parent="Balls" index="1" instance=ExtResource("3_4gnmb")]
+position = Vector2(-170, -425)
+current_scale = 1.0
+
+[node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_j2hdj")]
+position = Vector2(1021, -476)
+scale = Vector2(1.9, 1.9)
+
+[node name="ScaleZoneGrow2" parent="Zones" index="1" instance=ExtResource("4_j2hdj")]
+position = Vector2(1012, -366)
+scale = Vector2(1.9, 1.9)
+
+[node name="ScaleZoneGrow3" parent="Zones" index="2" instance=ExtResource("4_j2hdj")]
+position = Vector2(1019, -240)
+scale = Vector2(1.9, 1.9)
+
+[node name="ScaleZoneShrink" parent="Zones" index="3" instance=ExtResource("5_erkah")]
+position = Vector2(1078, -110)
+scale = Vector2(1.9, 1.9)
+
+[node name="ScaleZoneShrink2" parent="Zones" index="4" instance=ExtResource("5_erkah")]
+position = Vector2(1076, 4)
+scale = Vector2(1.9, 1.9)
+
+[node name="ScaleZoneShrink3" parent="Zones" index="5" instance=ExtResource("5_erkah")]
+position = Vector2(1067, 123)
+scale = Vector2(1.9, 1.9)
+
+[node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("3_12hwg")]
+position = Vector2(508, 449)
+scale = Vector2(5.36514, 3.81285)
