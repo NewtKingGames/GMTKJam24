@@ -1,11 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuxkva4yvov7h"]
+[gd_scene load_steps=7 format=3 uid="uid://cuxkva4yvov7h"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/tilting_platform.gd" id="1_hasvl"]
-[ext_resource type="Texture2D" uid="uid://cafcd1k01twp8" path="res://Sprites/GraySquare.png" id="1_m7x1e"]
+[ext_resource type="Texture2D" uid="uid://5c4hsqdyvb46" path="res://Sprites/tilt_platform.png" id="2_0r471"]
 [ext_resource type="PackedScene" uid="uid://ohvkenw5imen" path="res://Scenes/Objects/weight_area.tscn" id="2_cblta"]
 [ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="4_5vf6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ytti"]
+size = Vector2(25.7422, 24.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ipi42"]
 
 [node name="TiltingPlatform" type="StaticBody2D"]
 modulate = Color(1, 0.517647, 0, 1)
@@ -13,20 +16,21 @@ scale = Vector2(4, 4)
 script = ExtResource("1_hasvl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(7.96, 0.64)
-texture = ExtResource("1_m7x1e")
+scale = Vector2(0.730002, 0.64)
+texture = ExtResource("2_0r471")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.75, -0.75)
 scale = Vector2(12.8, 1)
 shape = SubResource("RectangleShape2D_0ytti")
 
 [node name="RightWeightArea" parent="." instance=ExtResource("2_cblta")]
-position = Vector2(70, 1)
-scale = Vector2(1.75, 1.12)
+position = Vector2(96, 1.5)
+scale = Vector2(2.1, 2.14071)
 
 [node name="LeftWeightArea" parent="." instance=ExtResource("2_cblta")]
-position = Vector2(-70, 1)
-scale = Vector2(1.75, 1.12)
+position = Vector2(-96.5, 1)
+scale = Vector2(2, 2.09)
 
 [node name="DeleteMe" type="Node" parent="."]
 
@@ -39,3 +43,9 @@ current_scale = 2.0
 
 [node name="Ball2" parent="DeleteMe" instance=ExtResource("4_5vf6l")]
 position = Vector2(-393, -388)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(2.67832, 2.63205)
+shape = SubResource("CircleShape2D_ipi42")
