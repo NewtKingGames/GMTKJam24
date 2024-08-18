@@ -5,7 +5,7 @@ class_name ScalableObject
 @onready var grow_scale_particle_effect: ScaleParticleEffect = $GrowScaleParticleEffect
 @onready var shrink_scale_particle_effect: ScaleParticleEffect = $ShrinkScaleParticleEffect
 
-signal scale_changed(current_scale: float)
+signal scale_changed
 
 # This class should be added as the top level script of every object in the game it proveides things for:
 # The current "scale" of the object which affects things like weight and size and maybe speed. The effects of size should be set in the classes which extend this
@@ -28,6 +28,8 @@ func get_current_weight():
 
 func _change_scale(scale_value: float):
 	current_scale = scale_value
+	print("emitting the scale")
+	scale_changed.emit(current_scale)
 	update_scale_attributes()
 	# Call other function to change things
 

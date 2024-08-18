@@ -44,12 +44,12 @@ current_scale = 2.0
 position = Vector2(-596, -435)
 
 [node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_a25kc")]
-position = Vector2(890, -253)
+position = Vector2(1007, -237)
 scale = Vector2(0.75, 0.75)
 collision_layer = 1
 
 [node name="ScaleZoneGrow3" parent="Zones" index="1" instance=ExtResource("4_a25kc")]
-position = Vector2(891, -381)
+position = Vector2(1007, -363)
 scale = Vector2(0.75, 0.75)
 collision_layer = 1
 
@@ -60,12 +60,12 @@ collision_layer = 1
 is_locked_in_place = true
 
 [node name="ScaleZoneShrink2" parent="Zones" index="3" instance=ExtResource("5_2n8fq")]
-position = Vector2(890, -125)
+position = Vector2(1007, -111)
 scale = Vector2(0.75, 0.75)
 collision_layer = 1
 
 [node name="ScaleZoneShrink3" parent="Zones" index="4" instance=ExtResource("5_2n8fq")]
-position = Vector2(890, 3)
+position = Vector2(1007, -4)
 scale = Vector2(0.75, 0.75)
 collision_layer = 1
 
