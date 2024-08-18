@@ -35,9 +35,11 @@ text = "You win
 vertical_alignment = 1
 
 [node name="TutorialLabel" type="Label" parent="."]
-offset_left = -334.0
-offset_top = 536.0
-offset_right = 440.0
-offset_bottom = 559.0
+offset_left = -463.0
+offset_top = 548.0
+offset_right = 1085.0
+offset_bottom = 580.0
 theme_override_fonts/font = ExtResource("8_kx8ci")
-text = "Press 'enter' to start level. Press 'r' to restart level"
+theme_override_font_sizes/font_size = 32
+text = "'enter' to start level, 'r' to restart.
+"

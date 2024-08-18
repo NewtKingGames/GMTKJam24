@@ -1,9 +1,9 @@
 extends Label
 
-var label_prefix: String = "Current Weight: "
-
 func _ready():
-	text = label_prefix + str(0)
+	text = str(0)
 
+# Make text Red if not enough make text green if correct
+# TODO - play some kind of animation?
 func _on_basic_scale_platform_scale_weight_changed(weight):
-	text = label_prefix + str(weight)
+	text = str(weight)
