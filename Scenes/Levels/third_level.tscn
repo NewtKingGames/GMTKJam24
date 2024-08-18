@@ -13,50 +13,50 @@
 zoom = Vector2(0.8, 0.8)
 
 [node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_0to08")]
-position = Vector2(-327, -265)
+position = Vector2(-283, -290)
 rotation = -0.461547
-scale = Vector2(16.3895, 1.37897)
+scale = Vector2(1.34708, 1.61589)
 
 [node name="Platform8" parent="Platforms" index="1" instance=ExtResource("2_0to08")]
 position = Vector2(351, 180)
 rotation = 0.23715
-scale = Vector2(14.2958, 1.37897)
+scale = Vector2(2.24178, 1.37897)
 
 [node name="Platform3" parent="Platforms" index="2" instance=ExtResource("2_0to08")]
-position = Vector2(-788, 40)
+position = Vector2(-922, -13)
 rotation = 0.294798
-scale = Vector2(20.7703, 1.37897)
+scale = Vector2(2.08105, 1.37897)
 
 [node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_0to08")]
-position = Vector2(34, 286)
+position = Vector2(132, 306)
 rotation = 0.253397
-scale = Vector2(20.7703, 1.37897)
+scale = Vector2(1.86624, 1.37897)
 
 [node name="Platform5" parent="Platforms" index="4" instance=ExtResource("2_0to08")]
-position = Vector2(-439, 278)
+position = Vector2(-396, 273)
 rotation = 0.253397
-scale = Vector2(8.15767, 1.39183)
+scale = Vector2(0.744984, 1.39183)
 
 [node name="Platform6" parent="Platforms" index="5" instance=ExtResource("2_0to08")]
-position = Vector2(-496, 242)
+position = Vector2(-483, 192)
 rotation = 1.85028
-scale = Vector2(8.15767, 1.39183)
+scale = Vector2(0.448952, 1.39183)
 
 [node name="Platform7" parent="Platforms" index="6" instance=ExtResource("2_0to08")]
-position = Vector2(-295, 308)
+position = Vector2(-295, 300)
 rotation = 1.85028
-scale = Vector2(8.15767, 1.39183)
+scale = Vector2(0.579982, 1.39183)
 
 [node name="Platform2" parent="Platforms" index="7" instance=ExtResource("2_0to08")]
 position = Vector2(-934, -494)
-rotation = 0.286225
-scale = Vector2(21.5555, 1.62183)
+rotation = 0.137413
+scale = Vector2(1.31415, 1.62183)
 
 [node name="Ball" parent="Balls" index="0" instance=ExtResource("3_4gnmb")]
-position = Vector2(-1062, -624)
+position = Vector2(-1158, -644)
 
 [node name="Ball2" parent="Balls" index="1" instance=ExtResource("3_4gnmb")]
-position = Vector2(-170, -425)
+position = Vector2(-130, -541)
 
 [node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_j2hdj")]
 position = Vector2(1021, -476)
@@ -83,6 +83,6 @@ position = Vector2(1067, 123)
 collision_layer = 1
 
 [node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("3_12hwg")]
-position = Vector2(508, 449)
+position = Vector2(846, 467)
 scale = Vector2(5.36514, 3.81285)
 goal_weight = 4.0

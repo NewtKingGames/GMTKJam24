@@ -1,15 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://su8ld586qy81"]
+[gd_scene load_steps=4 format=3 uid="uid://su8ld586qy81"]
 
-[ext_resource type="Texture2D" uid="uid://cafcd1k01twp8" path="res://Sprites/GraySquare.png" id="1_h1g82"]
+[ext_resource type="Texture2D" uid="uid://bdvclbhildrgi" path="res://Sprites/Normal_Platform.png" id="1_skekp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoavq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pe371"]
+size = Vector2(18.4751, 27.4787)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5iayg"]
+radius = 19.0263
 
 [node name="Platform" type="StaticBody2D"]
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_h1g82")
+texture_repeat = 2
+texture = ExtResource("1_skekp")
+region_enabled = true
+region_rect = Rect2(17.0224, 230.079, 469.521, 39.8171)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.60169, 1.60169)
-shape = SubResource("RectangleShape2D_uoavq")
+visible = false
+position = Vector2(0.500001, 0)
+scale = Vector2(23.7617, 1.38289)
+shape = SubResource("RectangleShape2D_pe371")
+
+[node name="LeftSide" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(216, 2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+shape = SubResource("CircleShape2D_5iayg")
+
+[node name="LeftSide2" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(-216, 2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide2"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+shape = SubResource("CircleShape2D_5iayg")
