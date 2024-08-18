@@ -11,6 +11,11 @@ var scale_factor: float
 var is_held_by_player_mouse: bool = false
 var is_held_by_player_character: bool = false
 
+# Don't scale objects until the level starts and sets this to true
+var can_zone_scale_objects: bool = false
+# Prevent zone from being moved after the level is started
+var can_zone_be_grabbed_by_mouse:bool = true
+
 func _ready():
 	lock_icon_sprite.visible = is_locked_in_place
 	point_light_2d.color = self.modulate
@@ -24,6 +29,10 @@ func _ready():
 func _process(delta: float):
 	if is_held_by_player_mouse:
 		position = get_global_mouse_position()
+
+func level_started():
+	can_zone_scale_objects = true
+	can_zone_be_grabbed_by_mouse = false
 
 func _on_body_entered_scale_zone(body: Node2D):
 	if body is ScalableObject:
@@ -49,7 +58,7 @@ func player_character_pickup():
 	pass
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and can_zone_be_grabbed_by_mouse:
 		if is_locked_in_place:
 			error_sound.play()
 			return
@@ -60,4 +69,5 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 		is_held_by_player_mouse = !is_held_by_player_mouse
 
 func scale_object(body: ScalableObject):
-	body.scale_by_factor(scale_factor)
+	if can_zone_scale_objects:
+		body.scale_by_factor(scale_factor)

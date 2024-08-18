@@ -3,10 +3,14 @@ class_name Level extends Node2D
 @onready var balls_parent = $Balls
 @onready var weight_scale_tracker = $WeightScaleTracker
 @onready var label = $Label
+@onready var zones_parent = $Zones
+
 
 var balls: Array = []
+var zones: Array = []
 
 func _ready():
+	zones = zones_parent.get_children()
 	balls = balls_parent.get_children()
 	for ball in balls:
 		if ball is ScalableObject:
@@ -26,6 +30,8 @@ func start_level():
 	for ball in balls:
 		if ball is ScalableObject:
 			ball.gravity_scale = 0.5
+	for zone in zones:
+		zone.level_started()
 
 func beat_level():
 	label.visible = true
