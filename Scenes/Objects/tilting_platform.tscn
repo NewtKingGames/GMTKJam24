@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuxkva4yvov7h"]
+[gd_scene load_steps=5 format=3 uid="uid://cuxkva4yvov7h"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/tilting_platform.gd" id="1_hasvl"]
 [ext_resource type="Texture2D" uid="uid://cafcd1k01twp8" path="res://Sprites/GraySquare.png" id="1_m7x1e"]
 [ext_resource type="PackedScene" uid="uid://ohvkenw5imen" path="res://Scenes/Objects/weight_area.tscn" id="2_cblta"]
-[ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="4_5vf6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ytti"]
 
@@ -21,21 +20,9 @@ scale = Vector2(12.8, 1)
 shape = SubResource("RectangleShape2D_0ytti")
 
 [node name="RightWeightArea" parent="." instance=ExtResource("2_cblta")]
-position = Vector2(64, 1)
-scale = Vector2(1.9, 1.12)
+position = Vector2(70, 1)
+scale = Vector2(1.75, 1.12)
 
 [node name="LeftWeightArea" parent="." instance=ExtResource("2_cblta")]
-position = Vector2(-64, 1)
-scale = Vector2(1.9, 1.12)
-
-[node name="DeleteMe" type="Node" parent="."]
-
-[node name="Ball" parent="DeleteMe" instance=ExtResource("4_5vf6l")]
-position = Vector2(-350, -467)
-current_scale = 2.0
-
-[node name="Ball2" parent="DeleteMe" instance=ExtResource("4_5vf6l")]
-position = Vector2(336, -486)
-
-[node name="Camera2D" type="Camera2D" parent="DeleteMe"]
-position = Vector2(8, -110)
+position = Vector2(-70, 1)
+scale = Vector2(1.75, 1.12)

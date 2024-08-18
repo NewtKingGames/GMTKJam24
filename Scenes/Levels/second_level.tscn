@@ -12,64 +12,64 @@
 next_scene = ExtResource("2_yp26j")
 
 [node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_nvatl")]
-position = Vector2(-721, -143)
+position = Vector2(-720, -213)
 rotation = 0.646397
 scale = Vector2(13.04, 1)
 
 [node name="Platform2" parent="Platforms" index="1" instance=ExtResource("2_nvatl")]
-position = Vector2(-316, -136)
+position = Vector2(-315, -206)
 rotation = -0.606882
 scale = Vector2(13.04, 1)
 
 [node name="Platform3" parent="Platforms" index="2" instance=ExtResource("2_nvatl")]
-position = Vector2(-528, 128)
+position = Vector2(-527, 58)
 rotation = -0.78589
 scale = Vector2(13.04, 1)
 
 [node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_nvatl")]
-position = Vector2(132, -276)
+position = Vector2(133, -346)
 rotation = 0.469101
 scale = Vector2(13.04, 1)
 
 [node name="Platform5" parent="Platforms" index="4" instance=ExtResource("2_nvatl")]
-position = Vector2(597, -9.99994)
+position = Vector2(598, -79.9999)
 rotation = -0.741502
 scale = Vector2(13.04, 1)
 
 [node name="Ball" parent="Balls" index="0" instance=ExtResource("4_g1g0l")]
-position = Vector2(92, -436)
+position = Vector2(93, -554)
 current_scale = 2.0
 
 [node name="Ball2" parent="Balls" index="1" instance=ExtResource("4_g1g0l")]
-position = Vector2(-723, -328)
+position = Vector2(-722, -446)
 
 [node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_a25kc")]
-position = Vector2(896, -120)
+position = Vector2(896, -195)
 scale = Vector2(1.9, 1.9)
 
 [node name="ScaleZoneGrow3" parent="Zones" index="1" instance=ExtResource("4_a25kc")]
-position = Vector2(896, -205)
+position = Vector2(896, -280)
 scale = Vector2(1.9, 1.9)
 
 [node name="ScaleZoneGrow4" parent="Zones" index="2" instance=ExtResource("4_a25kc")]
-position = Vector2(-688, 143)
+position = Vector2(-688, 68)
 scale = Vector2(1.9, 1.9)
 is_locked_in_place = true
 
 [node name="ScaleZoneShrink2" parent="Zones" index="3" instance=ExtResource("5_2n8fq")]
-position = Vector2(896, -44)
+position = Vector2(896, -119)
 scale = Vector2(1.9, 1.9)
 
 [node name="ScaleZoneShrink3" parent="Zones" index="4" instance=ExtResource("5_2n8fq")]
-position = Vector2(898, 38)
+position = Vector2(898, -37)
 scale = Vector2(1.9, 1.9)
 
 [node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("2_mcyg3")]
-position = Vector2(-777, 373)
+position = Vector2(-771, 275)
 scale = Vector2(4.77778, 4.55556)
 goal_weight = 8.0
 
 [node name="BasicScalePlatform2" parent="Scales" index="1" instance=ExtResource("2_mcyg3")]
-position = Vector2(242, 216)
+position = Vector2(248, 118)
 scale = Vector2(4.77778, 4.55556)
 goal_weight = 16.0
