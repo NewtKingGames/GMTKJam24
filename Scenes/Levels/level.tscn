@@ -9,6 +9,7 @@ script = ExtResource("1_v0nyq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
+zoom = Vector2(0.9, 0.9)
 
 [node name="WeightScaleTracker" type="Node" parent="."]
 script = ExtResource("2_p0vxm")

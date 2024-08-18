@@ -11,6 +11,7 @@
 
 [node name="BasicScalePlatform" type="StaticBody2D" groups=["scales"]]
 scale = Vector2(4, 4)
+collision_layer = 2
 script = ExtResource("1_grtd1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

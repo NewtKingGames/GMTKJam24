@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6miisatlkaeg"]
+[gd_scene load_steps=9 format=3 uid="uid://b6miisatlkaeg"]
 
 [ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_76a7u"]
 [ext_resource type="PackedScene" uid="uid://bnkeyduwbqc7x" path="res://Scenes/Levels/second_level.tscn" id="2_6hn8q"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="3_jo2ae"]
 [ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="4_368d0"]
 [ext_resource type="FontFile" uid="uid://banw55tp6ocuu" path="res://Fonts/PixelOperator8-Bold.ttf" id="6_xqq46"]
+[ext_resource type="PackedScene" uid="uid://cy61i8icxkria" path="res://Scenes/Character/player_body.tscn" id="8_lg0e5"]
 
 [node name="FirstLevel" instance=ExtResource("1_76a7u")]
 next_scene = ExtResource("2_6hn8q")
@@ -18,7 +19,7 @@ scale = Vector2(20.68, 1)
 
 [node name="Platform2" parent="Platforms" index="1" instance=ExtResource("2_t1w6m")]
 position = Vector2(767, -69)
-rotation = 2.84218
+rotation = -0.205957
 scale = Vector2(20.68, 1)
 
 [node name="Ball" parent="Balls" index="0" instance=ExtResource("3_4018k")]
@@ -29,12 +30,12 @@ position = Vector2(885, -513)
 
 [node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_368d0")]
 position = Vector2(-791, -290)
-scale = Vector2(2.684, 2.684)
+collision_layer = 1
 is_locked_in_place = true
 
 [node name="ScaleZoneGrow2" parent="Zones" index="1" instance=ExtResource("4_368d0")]
-position = Vector2(214, -426)
-scale = Vector2(2.684, 2.684)
+position = Vector2(291, -433)
+collision_layer = 1
 
 [node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("3_jo2ae")]
 position = Vector2(-249, 152)
@@ -65,3 +66,6 @@ theme_override_fonts/font = ExtResource("6_xqq46")
 theme_override_font_sizes/font_size = 24
 text = "Some areas are locked and cannot be moved
 "
+
+[node name="PlayerBody" parent="." index="9" instance=ExtResource("8_lg0e5")]
+position = Vector2(491, -119)

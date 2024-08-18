@@ -1,12 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy61i8icxkria"]
+[gd_scene load_steps=8 format=3 uid="uid://cy61i8icxkria"]
 
 [ext_resource type="Script" path="res://Scenes/Character/player_body.gd" id="1_md2ce"]
 [ext_resource type="Texture2D" uid="uid://ug2ygcf7mio6" path="res://Sprites/16x16 Mage 4.png" id="1_nlx2m"]
+[ext_resource type="Script" path="res://Scenes/Character/pickup_controller.gd" id="3_v11ja"]
+[ext_resource type="PackedScene" uid="uid://b0v6dbut6ufwy" path="res://Scenes/Effects/scale_zone_put_down_highlight.tscn" id="4_c8x6e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g3qgx"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2fd45"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xe6gn"]
+
 [node name="PlayerBody" type="CharacterBody2D"]
 scale = Vector2(4, 4)
+collision_mask = 31
 script = ExtResource("1_md2ce")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -17,3 +24,38 @@ position = Vector2(0, -6)
 texture = ExtResource("1_nlx2m")
 hframes = 9
 vframes = 8
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 31
+collision_mask = 31
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2(15.25, -5)
+scale = Vector2(1, 1.35)
+shape = SubResource("CapsuleShape2D_2fd45")
+debug_color = Color(0.623529, 0.870588, 0.180392, 0.419608)
+
+[node name="PickupController" type="Node2D" parent="."]
+script = ExtResource("3_v11ja")
+
+[node name="PickupSlotMarker" type="Marker2D" parent="."]
+position = Vector2(-9.75, -2)
+
+[node name="PutdownMarker" type="Marker2D" parent="."]
+position = Vector2(27.75, 0)
+
+[node name="ScaleZonePutDownHighlight" parent="." instance=ExtResource("4_c8x6e")]
+position = Vector2(27.75, 0)
+
+[node name="FloorDetector" type="Area2D" parent="."]
+collision_layer = 34
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorDetector"]
+position = Vector2(0, 12.25)
+scale = Vector2(0.919034, 0.429737)
+shape = SubResource("CircleShape2D_xe6gn")
+debug_color = Color(0.7225, 0.356894, 0.810156, 0.42)
+
+[connection signal="area_entered" from="PickupArea" to="PickupController" method="_on_pickup_area_area_entered"]
+[connection signal="area_exited" from="PickupArea" to="PickupController" method="_on_pickup_area_area_exited"]

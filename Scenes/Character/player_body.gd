@@ -1,6 +1,9 @@
 extends CharacterBody2D
 @onready var sprite_2d = $Sprite2D
-
+@onready var pickup_slot_marker = $PickupSlotMarker
+@onready var pickup_area = $PickupArea
+@onready var putdown_marker = $PutdownMarker
+@onready var floor_detector = $FloorDetector
 
 const SPEED = 600.0
 const JUMP_VELOCITY = -900.0
@@ -11,24 +14,38 @@ var gravity = 2000
 
 func _physics_process(delta):
 	# Flip the sprite depending on direction:
-	if velocity.x > 0:
+	if velocity.x > 0 :
 		sprite_2d.flip_h = false
-	elif velocity.x < 0:
+		pickup_area.scale.x = 1
+		pickup_slot_marker.position.x = -9.75
+		putdown_marker.position.x = 27.75
+	if velocity.x < 0:
 		sprite_2d.flip_h = true
+		pickup_area.scale.x = -1
+		pickup_slot_marker.position.x = 9.75
+		putdown_marker.position.x = -27.75
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	if is_on_floor():
+		# Grab the object that we're on
+		var floor: Node2D = get_floor_object()
+		rotation = floor.rotation
+	else:
+		rotation = 0
 	move_and_slide()
+
+func get_floor_object() -> Node2D:
+	# Grab the object
+	return floor_detector.get_overlapping_bodies()[0]
+	

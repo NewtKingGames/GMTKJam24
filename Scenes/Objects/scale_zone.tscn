@@ -11,14 +11,15 @@
 
 [node name="ScaleZone" type="Area2D"]
 modulate = Color(1, 1, 1, 0.486275)
-scale = Vector2(4, 4)
+collision_layer = 8
 script = ExtResource("1_6l7sw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
 texture = ExtResource("1_8u4ff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.52506, 1.52506)
+scale = Vector2(6.05506, 6.25645)
 shape = SubResource("RectangleShape2D_7ny1o")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -27,8 +28,8 @@ energy = 4.0
 texture = ExtResource("3_65k4s")
 
 [node name="LockIconSprite" type="Sprite2D" parent="."]
-position = Vector2(-1, -12)
-scale = Vector2(1.74971, 1.74971)
+position = Vector2(-1, -23)
+scale = Vector2(4.328, 4.328)
 texture = ExtResource("4_2o5fw")
 
 [node name="ErrorSound" type="AudioStreamPlayer" parent="."]
