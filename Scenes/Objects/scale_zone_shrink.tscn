@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bodowffk2hyev"]
+[gd_scene load_steps=5 format=3 uid="uid://bodowffk2hyev"]
 
 [ext_resource type="PackedScene" uid="uid://b604b2rsnlmpy" path="res://Scenes/Objects/scale_zone.tscn" id="1_i3xmw"]
 [ext_resource type="Script" path="res://Scenes/Objects/scale_zone_shrink.gd" id="2_3b1wq"]
+[ext_resource type="Texture2D" uid="uid://b6hm47ovc5nmr" path="res://Sprites/Red_Cube.png" id="3_wcrko"]
+[ext_resource type="Texture2D" uid="uid://bnvk1tq8aflb5" path="res://Sprites/Down_Arrow.png" id="4_kysxa"]
 
 [node name="ScaleZoneShrink" instance=ExtResource("1_i3xmw")]
-modulate = Color(0.917647, 0.105882, 0, 0.486275)
+modulate = Color(0.896873, 0.411383, 2.23877e-07, 1)
 collision_mask = 5
 script = ExtResource("2_3b1wq")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_wcrko")
+
+[node name="ArrowIconSprite" parent="." index="4"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+texture = ExtResource("4_kysxa")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered_scale_zone"]

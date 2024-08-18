@@ -2,6 +2,8 @@ class_name ScaleZone extends Area2D
 
 @onready var point_light_2d = $PointLight2D
 @onready var lock_icon_sprite = $LockIconSprite
+@onready var arrow_icon_sprite = $ArrowIconSprite
+
 @onready var error_sound = $ErrorSound
 @onready var click_sound = $ClickSound
 
@@ -18,6 +20,7 @@ var can_zone_be_grabbed_by_mouse:bool = true
 
 func _ready():
 	lock_icon_sprite.visible = is_locked_in_place
+	arrow_icon_sprite.visible = !is_locked_in_place
 	point_light_2d.color = self.modulate
 	# Subscribe signals
 	body_entered.connect(_on_body_entered_scale_zone)
@@ -64,11 +67,50 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 		if is_locked_in_place:
 			error_sound.play()
 			return
-		# Toggle is_held_player
-		#TODO: current solution is oging to allow players to grab multiple areas at a time
-		click_sound.pitch_scale = randf_range(0.8, 1.2)
-		click_sound.play()
-		is_held_by_player_mouse = !is_held_by_player_mouse
+		if is_held_by_player_mouse:
+			released_by_mouse()
+		else: 
+			grabbed_by_mouse()
+		
+		
+#TODO: current solution is oging to allow players to grab multiple areas at a time
+func grabbed_by_mouse():
+	click_sound.pitch_scale = randf_range(0.8, 1.2)
+	click_sound.play()
+	is_held_by_player_mouse = true
+	grabbed_effect()
+
+
+func released_by_mouse():
+	click_sound.pitch_scale = randf_range(0.8, 1.2)
+	click_sound.play()
+	is_held_by_player_mouse = false
+	released_effect()
+	
+func grabbed_effect():
+	var tween_size: Tween = create_tween().parallel()
+	var tween_rotate: Tween = create_tween()
+	# Bounce object larger
+	tween_size.tween_property(self, "scale", Vector2(1.2, 1.2), 1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	tween_rotate.tween_property(self, "rotation_degrees", 20, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", -10, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", 5, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
+	#tween.tween_property()
+
+func released_effect():
+	var tween: Tween = create_tween()
+	# Bounce object smaller
+	tween.tween_property(self, "scale", Vector2(1,1), 1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	var tween_rotate: Tween = create_tween()
+	tween_rotate.tween_property(self, "rotation_degrees", 20, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", -10, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", 5, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
 
 func scale_object(body: ScalableObject):
 	if can_zone_scale_objects:

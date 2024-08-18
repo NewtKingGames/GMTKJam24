@@ -1,36 +1,41 @@
-[gd_scene load_steps=8 format=3 uid="uid://b604b2rsnlmpy"]
+[gd_scene load_steps=9 format=3 uid="uid://b604b2rsnlmpy"]
 
 [ext_resource type="Script" path="res://Scripts/scale_zone.gd" id="1_6l7sw"]
-[ext_resource type="Texture2D" uid="uid://cafcd1k01twp8" path="res://Sprites/GraySquare.png" id="1_8u4ff"]
+[ext_resource type="Texture2D" uid="uid://cm70p6ygiei6x" path="res://Sprites/Green_Cube.png" id="2_73ln1"]
 [ext_resource type="Texture2D" uid="uid://d2iys8uwpxqp7" path="res://Sprites/flashlight_reverse.png" id="3_65k4s"]
 [ext_resource type="Texture2D" uid="uid://ciynfda7sv0ly" path="res://Sprites/lock.png" id="4_2o5fw"]
+[ext_resource type="Texture2D" uid="uid://doet4d3tessab" path="res://Sprites/Up_Arrow.png" id="5_5lyx3"]
 [ext_resource type="AudioStream" uid="uid://cbf482y8p183i" path="res://Audio/error_sound.mp3" id="5_14qdm"]
 [ext_resource type="AudioStream" uid="uid://cqp8xypv7gpnd" path="res://Audio/MinecraftPopSoundEffect.mp3" id="6_a5jl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ny1o"]
 
 [node name="ScaleZone" type="Area2D"]
-modulate = Color(1, 1, 1, 0.486275)
 collision_layer = 8
 script = ExtResource("1_6l7sw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
-texture = ExtResource("1_8u4ff")
+scale = Vector2(0.881441, 0.881441)
+texture = ExtResource("2_73ln1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 scale = Vector2(6.05506, 6.25645)
 shape = SubResource("RectangleShape2D_7ny1o")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
-energy = 4.0
+energy = 0.2
 texture = ExtResource("3_65k4s")
 
 [node name="LockIconSprite" type="Sprite2D" parent="."]
 position = Vector2(-1, -23)
 scale = Vector2(4.328, 4.328)
 texture = ExtResource("4_2o5fw")
+
+[node name="ArrowIconSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.724528, 0.724528)
+texture = ExtResource("5_5lyx3")
 
 [node name="ErrorSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_14qdm")

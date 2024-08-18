@@ -5,7 +5,6 @@ class_name Level extends Node2D
 @onready var label = $Label
 @onready var zones_parent = $Zones
 
-
 var balls: Array = []
 var zones: Array = []
 
@@ -23,8 +22,7 @@ func _process(delta):
 		start_level()
 	if Input.is_action_just_pressed("Reset"):
 		restart_level()
-		
-		
+
 func start_level():
 	# Do some other fun effects here
 	for ball in balls:
