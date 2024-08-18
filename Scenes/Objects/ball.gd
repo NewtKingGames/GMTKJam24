@@ -14,7 +14,6 @@ func _ready():
 	if current_scale == 0:
 		current_scale = 1.0
 	else:
-		print(current_scale)
 		update_scale_attributes_instantly()
 
 func update_scale_attributes():

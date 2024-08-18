@@ -37,6 +37,8 @@ func level_started():
 func _on_body_entered_scale_zone(body: Node2D):
 	if body is ScalableObject:
 		scale_object(body)
+	if body is Player:
+		scale_player(body)
 
 func _on_mouse_entered():
 	start_selectable_effects()
@@ -71,3 +73,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 func scale_object(body: ScalableObject):
 	if can_zone_scale_objects:
 		body.scale_by_factor(scale_factor)
+
+func scale_player(player: Player):
+	player.scale_by_factor(scale_factor)

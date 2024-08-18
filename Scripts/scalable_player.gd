@@ -1,5 +1,5 @@
-extends RigidBody2D # Consider changing to rigidbody 2D if you have to
-class_name ScalableObject 
+extends CharacterBody2D # Consider changing to rigidbody 2D if you have to
+class_name ScalablePlayer
 
 # TODO - this will work better if the Ball scene inhertied from some base scene
 @onready var grow_scale_particle_effect: ScaleParticleEffect = $GrowScaleParticleEffect
@@ -15,6 +15,7 @@ var base_weight: float
 func scale_by_factor(scale_factor: float):
 	# Start scale up or down effects
 	if scale_factor > 1:
+		print("particle effects starting!")
 		grow_scale_particle_effect.start_particle_effects()
 	elif scale_factor < 1:
 		shrink_scale_particle_effect.start_particle_effects()

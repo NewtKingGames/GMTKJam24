@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends ScalablePlayer
 @onready var sprite_2d = $Sprite2D
 @onready var pickup_slot_marker = $PickupSlotMarker
 @onready var pickup_area = $PickupArea
@@ -40,12 +40,20 @@ func _physics_process(delta):
 	if is_on_floor():
 		# Grab the object that we're on
 		var floor: Node2D = get_floor_object()
-		rotation = floor.rotation
+		if floor:
+			rotation = floor.rotation
 	else:
 		rotation = 0
 	move_and_slide()
 
 func get_floor_object() -> Node2D:
 	# Grab the object
-	return floor_detector.get_overlapping_bodies()[0]
-	
+	if floor_detector.get_overlapping_areas().size() > 0:
+		return floor_detector.get_overlapping_bodies()[0]
+	return null
+
+# This needs to be implemented by each class that extends this
+func update_scale_attributes():
+	print("hey")
+	print(current_scale)
+	super.update_scale_attributes()

@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cy61i8icxkria"]
+[gd_scene load_steps=10 format=3 uid="uid://cy61i8icxkria"]
 
 [ext_resource type="Script" path="res://Scenes/Character/player_body.gd" id="1_md2ce"]
 [ext_resource type="Texture2D" uid="uid://ug2ygcf7mio6" path="res://Sprites/16x16 Mage 4.png" id="1_nlx2m"]
 [ext_resource type="Script" path="res://Scenes/Character/pickup_controller.gd" id="3_v11ja"]
 [ext_resource type="PackedScene" uid="uid://b0v6dbut6ufwy" path="res://Scenes/Effects/scale_zone_put_down_highlight.tscn" id="4_c8x6e"]
+[ext_resource type="PackedScene" uid="uid://crorrc1p5qnkd" path="res://Scenes/Effects/shrink_scale_particle_effect.tscn" id="5_axka6"]
+[ext_resource type="PackedScene" uid="uid://b7qqir1vns4ic" path="res://Scenes/Effects/grow_scale_particle_effect.tscn" id="6_fiyyv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g3qgx"]
 
@@ -15,6 +17,7 @@
 scale = Vector2(4, 4)
 collision_mask = 31
 script = ExtResource("1_md2ce")
+current_scale = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_g3qgx")
@@ -56,6 +59,10 @@ position = Vector2(0, 12.25)
 scale = Vector2(0.919034, 0.429737)
 shape = SubResource("CircleShape2D_xe6gn")
 debug_color = Color(0.7225, 0.356894, 0.810156, 0.42)
+
+[node name="ShrinkScaleParticleEffect" parent="." instance=ExtResource("5_axka6")]
+
+[node name="GrowScaleParticleEffect" parent="." instance=ExtResource("6_fiyyv")]
 
 [connection signal="area_entered" from="PickupArea" to="PickupController" method="_on_pickup_area_area_entered"]
 [connection signal="area_exited" from="PickupArea" to="PickupController" method="_on_pickup_area_area_exited"]
