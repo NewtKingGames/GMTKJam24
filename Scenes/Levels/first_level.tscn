@@ -25,7 +25,7 @@ scale = Vector2(1.59297, 1.507)
 position = Vector2(-914, -513)
 
 [node name="Ball2" parent="Balls" index="1" instance=ExtResource("3_4018k")]
-position = Vector2(885, -513)
+position = Vector2(983, -502)
 
 [node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_368d0")]
 position = Vector2(-767, -332)

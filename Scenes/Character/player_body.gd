@@ -54,6 +54,4 @@ func get_floor_object() -> Node2D:
 
 # This needs to be implemented by each class that extends this
 func update_scale_attributes():
-	print("hey")
-	print(current_scale)
 	super.update_scale_attributes()

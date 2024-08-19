@@ -20,4 +20,5 @@ func _on_scale_goal_hit():
 		all_scale_goals_hit.emit()
 
 func _on_scale_goal_lost():
+	print("scale goal lost")
 	scales_with_goal_met -= 1

@@ -20,13 +20,6 @@ func _ready():
 	else:
 		update_scale_attributes_instantly()
 
-#func _process(delta):
-	##print(linear_velocity.length())
-	#if linear_velocity.length() > 200:
-		#print("HERE")
-	#elif linear_velocity.length() < 180:
-		#print("here")
-
 func update_scale_attributes():
 	_update_scale_attributes(Globals.scale_duration)
 

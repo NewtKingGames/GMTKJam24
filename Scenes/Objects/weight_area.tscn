@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ohvkenw5imen"]
+[gd_scene load_steps=4 format=3 uid="uid://ohvkenw5imen"]
 
 [ext_resource type="Script" path="res://Scripts/scale.gd" id="1_6fauc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgvvo"]
 size = Vector2(20, 14.3068)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3g3q"]
 
 [node name="WeightArea" type="Area2D"]
 collision_mask = 5
@@ -15,5 +17,13 @@ scale = Vector2(3.35909, 0.908656)
 shape = SubResource("RectangleShape2D_hgvvo")
 debug_color = Color(0.631853, 0.369543, 0.952534, 0.42)
 
+[node name="AreaToLeave" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaToLeave"]
+position = Vector2(0, -12)
+scale = Vector2(3.4, 1.16474)
+shape = SubResource("RectangleShape2D_i3g3q")
+debug_color = Color(0.888749, 0, 0.241741, 0.42)
+
 [connection signal="body_entered" from="." to="." method="_on_scale_area_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_scale_area_body_exited"]
+[connection signal="body_exited" from="AreaToLeave" to="." method="_on_scale_area_body_exited"]

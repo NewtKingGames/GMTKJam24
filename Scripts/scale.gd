@@ -12,21 +12,18 @@ var current_weight: float = 0.0:
 		area_weight_changed.emit(current_weight)
 
 func add_object_to_scale(object: ScalableObject):
-	print(object)
 	object.connect("scale_changed", objects_on_scale_changed)
 	objects_on_area[object.name] = object
 	objects_on_scale_changed()
-
-func my_new_func():
-	print("this!!")
 
 func remove_object_from_scale(object: ScalableObject):
 	objects_on_area.erase(object.name)
 	objects_on_scale_changed()
 
 func objects_on_scale_changed():
-	print("objects on scale changed!!!!")
+	#print(" current weight is ")
 	current_weight = compute_weight_of_objects()
+	#print(current_weight)
 
 func compute_weight_of_objects() -> float:
 	var total_weight: float = 0.0
@@ -39,7 +36,7 @@ func compute_weight_of_objects() -> float:
 
 # TODO - slowdown the objects when they land on the scale!!!
 func _on_scale_area_body_entered(body: Node2D):
-	if body is ScalableObject:
+	if body is ScalableObject and not is_object_on_scale(body):
 		if should_slowdown_objects:
 			body.linear_velocity = Vector2.ZERO
 		add_object_to_scale(body)
@@ -47,3 +44,6 @@ func _on_scale_area_body_entered(body: Node2D):
 func _on_scale_area_body_exited(body: Node2D):
 	if body is ScalableObject:
 		remove_object_from_scale(body)
+
+func is_object_on_scale(body: Node2D):
+	return objects_on_area.has(body.name)

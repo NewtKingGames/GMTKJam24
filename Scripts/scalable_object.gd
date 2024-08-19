@@ -28,7 +28,6 @@ func get_current_weight():
 
 func _change_scale(scale_value: float):
 	current_scale = scale_value
-	print("emitting the scale")
 	scale_changed.emit()
 	update_scale_attributes()
 	# Call other function to change things
