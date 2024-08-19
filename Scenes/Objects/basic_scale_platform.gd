@@ -42,6 +42,7 @@ func on_area_weight_changed(weight: float):
 func play_goal_hit_effects():
 	scale_weight_display.set("theme_override_colors/font_color", Color.LIME_GREEN)
 	await get_tree().create_timer(.1).timeout
+	ding_sound.pitch_scale = randf_range(0.8, 1.2)
 	ding_sound.play()
 
 func play_goal_lost_effects():
