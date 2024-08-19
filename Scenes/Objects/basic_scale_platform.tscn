@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://do0jxgdl0c466"]
+[gd_scene load_steps=13 format=3 uid="uid://do0jxgdl0c466"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/basic_scale_platform.gd" id="1_grtd1"]
 [ext_resource type="Texture2D" uid="uid://cafcd1k01twp8" path="res://Sprites/GraySquare.png" id="2_0jxji"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://4vpctbfopgof" path="res://Sprites/scale-top.png" id="8_ihhl5"]
 [ext_resource type="FontFile" uid="uid://c7k0swck6fxti" path="res://Fonts/PixelOperator8.ttf" id="9_0fmx5"]
 [ext_resource type="AudioStream" uid="uid://cnoglygfdx732" path="res://Audio/scale-ding.mp3" id="10_al8im"]
+[ext_resource type="AudioStream" uid="uid://cbf482y8p183i" path="res://Audio/error_sound.mp3" id="11_hmcvf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixf3m"]
 
@@ -67,7 +68,10 @@ text = "0"
 horizontal_alignment = 1
 script = ExtResource("3_b0esl")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="DingSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_al8im")
+
+[node name="ErrorSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_hmcvf")
 
 [connection signal="area_weight_changed" from="WeightArea" to="ScaleWeightDisplay" method="_on_basic_scale_platform_scale_weight_changed"]

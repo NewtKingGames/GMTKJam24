@@ -12,11 +12,13 @@ var current_weight: float = 0.0:
 		area_weight_changed.emit(current_weight)
 
 func add_object_to_scale(object: ScalableObject):
+	print(object)
+	object.connect("scale_changed", objects_on_scale_changed)
 	objects_on_area[object.name] = object
-	# TODO - this is not working which is strange, I would expect connect the signal to this function would update the weight of the scale
-	#objects_on_area[object.name].connect("scale_changed", objects_on_scale_changed)
-	#print(objects_on_area[object.name])
 	objects_on_scale_changed()
+
+func my_new_func():
+	print("this!!")
 
 func remove_object_from_scale(object: ScalableObject):
 	objects_on_area.erase(object.name)

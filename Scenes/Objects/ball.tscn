@@ -25,3 +25,7 @@ shape = SubResource("CircleShape2D_0nby0")
 [node name="GrowScaleParticleEffect" parent="." instance=ExtResource("3_21qf0")]
 
 [node name="ShrinkScaleParticleEffect" parent="." instance=ExtResource("4_kahem")]
+
+[node name="ImpactSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="RollSound" type="AudioStreamPlayer2D" parent="."]

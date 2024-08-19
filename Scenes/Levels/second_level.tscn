@@ -19,7 +19,7 @@ scale = Vector2(0.763991, 1)
 [node name="Platform2" parent="Platforms" index="1" instance=ExtResource("2_nvatl")]
 position = Vector2(-315, -315)
 rotation = -0.606882
-scale = Vector2(0.809506, 1)
+scale = Vector2(0.81, 1.2)
 
 [node name="Platform3" parent="Platforms" index="2" instance=ExtResource("2_nvatl")]
 position = Vector2(-460, -5.00002)
@@ -29,12 +29,12 @@ scale = Vector2(1.02073, 1)
 [node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_nvatl")]
 position = Vector2(133, -346)
 rotation = 0.469101
-scale = Vector2(1.31729, 1)
+scale = Vector2(1.31729, 1.12561)
 
 [node name="Platform5" parent="Platforms" index="4" instance=ExtResource("2_nvatl")]
 position = Vector2(712, -184)
 rotation = -0.741502
-scale = Vector2(1.32831, 1)
+scale = Vector2(1.3244, 1.17191)
 
 [node name="Ball" parent="Balls" index="0" instance=ExtResource("4_g1g0l")]
 position = Vector2(93, -554)

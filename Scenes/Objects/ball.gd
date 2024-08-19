@@ -3,6 +3,10 @@ class_name Ball extends ScalableObject
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
+@onready var impact_sound = $ImpactSound
+@onready var roll_sound = $RollSound
+
+
 var sprite_starting_scale: Vector2
 var collision_shape_starting_scale: Vector2
 
@@ -15,6 +19,13 @@ func _ready():
 		current_scale = 1.0
 	else:
 		update_scale_attributes_instantly()
+
+#func _process(delta):
+	##print(linear_velocity.length())
+	#if linear_velocity.length() > 200:
+		#print("HERE")
+	#elif linear_velocity.length() < 180:
+		#print("here")
 
 func update_scale_attributes():
 	_update_scale_attributes(Globals.scale_duration)

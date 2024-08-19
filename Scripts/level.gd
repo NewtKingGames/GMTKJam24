@@ -12,10 +12,14 @@ func _ready():
 	zones = zones_parent.get_children()
 	balls = balls_parent.get_children()
 	for ball in balls:
+		ball.connect("scale_changed", my_func)
 		if ball is ScalableObject:
 			ball.gravity_scale = 0
 	weight_scale_tracker.connect("all_scale_goals_hit", beat_level)
 
+
+func my_func():
+	print("the scale changed!!")
 
 func _process(delta):
 	if Input.is_action_just_pressed("start"):
