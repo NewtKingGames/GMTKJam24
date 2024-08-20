@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmn16qtkrgw1n"]
+[gd_scene load_steps=10 format=3 uid="uid://bmn16qtkrgw1n"]
 
 [ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_nylvn"]
+[ext_resource type="PackedScene" uid="uid://du4ut16cujeca" path="res://Scenes/Levels/fifth_level.tscn" id="2_aoea3"]
 [ext_resource type="PackedScene" uid="uid://7brsp21cojoa" path="res://Scenes/Objects/breakable_platform.tscn" id="2_v780f"]
 [ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="3_ar8th"]
 [ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="4_xt8mc"]
 [ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="5_lrnwh"]
 [ext_resource type="PackedScene" uid="uid://bodowffk2hyev" path="res://Scenes/Objects/scale_zone_shrink.tscn" id="6_cbf7l"]
 [ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="7_0g1ss"]
+[ext_resource type="PackedScene" uid="uid://d30cdwt146pt1" path="res://Scenes/Effects/orange_light.tscn" id="8_p3vo8"]
 
 [node name="FourthLevel" instance=ExtResource("1_nylvn")]
+next_scene = ExtResource("2_aoea3")
 
 [node name="BreakablePlatform" parent="Platforms" index="0" instance=ExtResource("2_v780f")]
 position = Vector2(-502, -112)
@@ -54,3 +57,5 @@ goal_weight = 4.0
 [node name="BasicScalePlatform2" parent="Scales" index="1" instance=ExtResource("7_0g1ss")]
 position = Vector2(-548, 238)
 goal_weight = 8.0
+
+[node name="OrangeLight" parent="." index="11" instance=ExtResource("8_p3vo8")]

@@ -9,6 +9,8 @@ signal platform_broke(platform: BreakablePlatform)
 
 var current_weight: float = 0.0:
 	set(value):
+		print("weight is being set to")
+		print(value)
 		if value >= weight_limit:
 			break_platform()
 		current_weight = value

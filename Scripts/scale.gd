@@ -42,6 +42,7 @@ func _on_scale_area_body_entered(body: Node2D):
 		add_object_to_scale(body)
 
 func _on_scale_area_body_exited(body: Node2D):
+	print("object is leaving!")
 	if body is ScalableObject:
 		remove_object_from_scale(body)
 

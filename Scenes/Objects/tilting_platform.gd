@@ -6,8 +6,8 @@ class_name TiltingPlatform extends StaticBody2D
 var right_weight: float = 0.0
 var left_weight: float = 0.0
 
-var max_rotation_left: float = -45.0
-var max_rotation_right: float = 45.0
+var max_rotation_left: float = -30.0
+var max_rotation_right: float = 30.0
 var rotation_change_rate
 
 func _ready():

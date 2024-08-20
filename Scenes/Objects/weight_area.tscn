@@ -18,6 +18,8 @@ shape = SubResource("RectangleShape2D_hgvvo")
 debug_color = Color(0.631853, 0.369543, 0.952534, 0.42)
 
 [node name="AreaToLeave" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaToLeave"]
 position = Vector2(0, -12)

@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://du4ut16cujeca"]
+[gd_scene load_steps=11 format=3 uid="uid://du4ut16cujeca"]
 
 [ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_64qfb"]
 [ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="2_t5c7k"]
 [ext_resource type="PackedScene" uid="uid://7brsp21cojoa" path="res://Scenes/Objects/breakable_platform.tscn" id="3_d0xxx"]
+[ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="4_tb2sv"]
+[ext_resource type="PackedScene" uid="uid://cuxkva4yvov7h" path="res://Scenes/Objects/tilting_platform.tscn" id="5_ypsv4"]
+[ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="5_ytbap"]
+[ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="6_tlr53"]
+[ext_resource type="PackedScene" uid="uid://bodowffk2hyev" path="res://Scenes/Objects/scale_zone_shrink.tscn" id="7_6n83d"]
+[ext_resource type="PackedScene" uid="uid://dq14x012auwtg" path="res://Scenes/Objects/double_scale_zone_grow.tscn" id="8_kiqqv"]
+[ext_resource type="PackedScene" uid="uid://d30cdwt146pt1" path="res://Scenes/Effects/orange_light.tscn" id="10_o1n1j"]
 
 [node name="fifth_level" instance=ExtResource("1_64qfb")]
 
@@ -11,14 +18,64 @@ position = Vector2(-718, -476)
 rotation = 0.266903
 
 [node name="Platform2" parent="Platforms" index="1" instance=ExtResource("2_t5c7k")]
-position = Vector2(-210, -322)
-rotation = -0.201925
+position = Vector2(-208, -151)
+rotation = -0.236293
 
 [node name="Platform3" parent="Platforms" index="2" instance=ExtResource("2_t5c7k")]
-position = Vector2(650, -516)
+position = Vector2(646, -362)
 rotation = -0.218547
 
-[node name="BreakablePlatform" parent="Platforms" index="3" instance=ExtResource("3_d0xxx")]
-position = Vector2(225, -401)
+[node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_t5c7k")]
+position = Vector2(1096, -428)
+rotation = -0.0588592
+
+[node name="BreakablePlatform" parent="Platforms" index="4" instance=ExtResource("3_d0xxx")]
+position = Vector2(223, -258)
 rotation = -0.261799
 scale = Vector2(1.11214, 0.65498)
+weight_limit = 8.0
+
+[node name="TiltingPlatform" parent="Platforms" index="5" instance=ExtResource("5_ypsv4")]
+position = Vector2(184, 206)
+scale = Vector2(1.56672, 1.56672)
+
+[node name="Ball" parent="Balls" index="0" instance=ExtResource("5_ytbap")]
+position = Vector2(62, -282)
+
+[node name="Ball2" parent="Balls" index="1" instance=ExtResource("5_ytbap")]
+position = Vector2(670, -430)
+
+[node name="Ball3" parent="Balls" index="2" instance=ExtResource("5_ytbap")]
+position = Vector2(1015, -487)
+
+[node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("6_tlr53")]
+position = Vector2(840, -226)
+
+[node name="ScaleZoneGrow2" parent="Zones" index="1" instance=ExtResource("6_tlr53")]
+position = Vector2(841, -76)
+
+[node name="ScaleZoneShrink" parent="Zones" index="2" instance=ExtResource("7_6n83d")]
+position = Vector2(840, 95)
+
+[node name="double_scale_zone_grow" parent="Zones" index="3" instance=ExtResource("8_kiqqv")]
+position = Vector2(690, -71)
+
+[node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("4_tb2sv")]
+position = Vector2(-662, 33)
+goal_weight = 16.0
+
+[node name="BasicScalePlatform2" parent="Scales" index="1" instance=ExtResource("4_tb2sv")]
+position = Vector2(652, 328)
+goal_weight = 8.0
+
+[node name="BasicScalePlatform3" parent="Scales" index="2" instance=ExtResource("4_tb2sv")]
+position = Vector2(-280, 324)
+goal_weight = 4.0
+
+[node name="TutorialLabel" parent="." index="8"]
+offset_top = -564.0
+offset_bottom = -532.0
+
+[node name="OrangeLight" parent="." index="11" instance=ExtResource("10_o1n1j")]
+position = Vector2(-312, -394)
+texture_scale = 10.2
