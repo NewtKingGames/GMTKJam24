@@ -4,6 +4,7 @@ class_name Level extends Node2D
 @onready var weight_scale_tracker = $WeightScaleTracker
 @onready var label = $Label
 @onready var zones_parent = $Zones
+@onready var level_win_sound = $LevelWinSound
 
 var balls: Array = []
 var zones: Array = []
@@ -32,6 +33,7 @@ func start_level():
 
 func beat_level():
 	label.visible = true
+	level_win_sound.play()
 	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_packed(next_scene)
 

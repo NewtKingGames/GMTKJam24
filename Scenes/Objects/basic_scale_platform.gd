@@ -37,12 +37,16 @@ func on_area_weight_changed(weight: float):
 	var percentage: float = current_weight / goal_weight
 	var step: float = 16.0 * percentage
 	var tween_position: Tween = create_tween()
-	tween_position.tween_property(moveable_objects, "position", Vector2(0, step+-16), 0.5)
+	print("The scale is this percentage of the way there")
+	print(percentage)
+	print("the scale is now at this position")
+	print(Vector2(0, step+-16))
+	tween_position.tween_property(moveable_objects, "position", Vector2(0, step+-11), 0.5)
 
 func play_goal_hit_effects():
 	scale_weight_display.set("theme_override_colors/font_color", Color.LIME_GREEN)
 	await get_tree().create_timer(.1).timeout
-	ding_sound.pitch_scale = randf_range(0.8, 1.2)
+	ding_sound.pitch_scale = randf_range(0.95, 1.2)
 	ding_sound.play()
 
 func play_goal_lost_effects():

@@ -27,7 +27,7 @@ rotation = -0.78589
 scale = Vector2(1.02073, 1)
 
 [node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_nvatl")]
-position = Vector2(133, -346)
+position = Vector2(93, -432)
 rotation = 0.469101
 scale = Vector2(1.31729, 1.12561)
 

@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://xngflg7iogv"]
+[gd_scene load_steps=8 format=3 uid="uid://xngflg7iogv"]
 
 [ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_hvh6w"]
 [ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="2_0to08"]
+[ext_resource type="PackedScene" uid="uid://bmn16qtkrgw1n" path="res://Scenes/Levels/fourth_level.tscn" id="2_q2jl6"]
 [ext_resource type="PackedScene" uid="uid://d1c5sdqrwiuri" path="res://Scenes/Objects/ball.tscn" id="3_4gnmb"]
 [ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="3_12hwg"]
 [ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="4_j2hdj"]
 [ext_resource type="PackedScene" uid="uid://bodowffk2hyev" path="res://Scenes/Objects/scale_zone_shrink.tscn" id="5_erkah"]
 
 [node name="ThirdLevel" instance=ExtResource("1_hvh6w")]
+next_scene = ExtResource("2_q2jl6")
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2(0.8, 0.8)
@@ -38,14 +40,14 @@ rotation = 0.253397
 scale = Vector2(0.744984, 1.39183)
 
 [node name="Platform6" parent="Platforms" index="5" instance=ExtResource("2_0to08")]
-position = Vector2(-486, 201)
+position = Vector2(-478, 173)
 rotation = 1.85028
-scale = Vector2(0.448952, 1.39183)
+scale = Vector2(0.322573, 1.7051)
 
 [node name="Platform7" parent="Platforms" index="6" instance=ExtResource("2_0to08")]
-position = Vector2(-282, 297)
+position = Vector2(-257, 234)
 rotation = 1.85028
-scale = Vector2(0.579982, 1.39183)
+scale = Vector2(0.277743, 1.69407)
 
 [node name="Platform2" parent="Platforms" index="7" instance=ExtResource("2_0to08")]
 position = Vector2(-934, -494)
@@ -59,30 +61,22 @@ position = Vector2(-1158, -644)
 position = Vector2(-130, -541)
 
 [node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_j2hdj")]
-position = Vector2(1021, -476)
+position = Vector2(1085, -430)
 collision_layer = 1
 
 [node name="ScaleZoneGrow2" parent="Zones" index="1" instance=ExtResource("4_j2hdj")]
-position = Vector2(1012, -366)
+position = Vector2(1085, -302)
 collision_layer = 1
 
-[node name="ScaleZoneGrow3" parent="Zones" index="2" instance=ExtResource("4_j2hdj")]
-position = Vector2(1019, -240)
+[node name="ScaleZoneShrink" parent="Zones" index="2" instance=ExtResource("5_erkah")]
+position = Vector2(1085, -174)
 collision_layer = 1
 
-[node name="ScaleZoneShrink" parent="Zones" index="3" instance=ExtResource("5_erkah")]
-position = Vector2(1078, -110)
-collision_layer = 1
-
-[node name="ScaleZoneShrink2" parent="Zones" index="4" instance=ExtResource("5_erkah")]
-position = Vector2(1076, 4)
-collision_layer = 1
-
-[node name="ScaleZoneShrink3" parent="Zones" index="5" instance=ExtResource("5_erkah")]
-position = Vector2(1067, 123)
+[node name="ScaleZoneShrink2" parent="Zones" index="3" instance=ExtResource("5_erkah")]
+position = Vector2(1085, -46)
 collision_layer = 1
 
 [node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("3_12hwg")]
-position = Vector2(836, 426)
+position = Vector2(836, 452)
 scale = Vector2(5.36514, 3.81285)
 goal_weight = 4.0

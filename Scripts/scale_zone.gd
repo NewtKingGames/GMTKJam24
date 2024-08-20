@@ -92,11 +92,15 @@ func grabbed_effect():
 	var tween_rotate: Tween = create_tween()
 	# Bounce object larger
 	tween_size.tween_property(self, "scale", Vector2(1.2, 1.2), 1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-	tween_rotate.tween_property(self, "rotation_degrees", 20, 0.05)
+	var max_rotation = randi_range(20, 30)
+	var rotate_direction = randi_range(0, 1)
+	if rotate_direction == 0:
+		rotate_direction = -1
+	tween_rotate.tween_property(self, "rotation_degrees", max_rotation * rotate_direction, 0.05)
 	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
-	tween_rotate.tween_property(self, "rotation_degrees", -10, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", max_rotation * randf_range(0.3, 0.6) * rotate_direction * -1, 0.05)
 	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
-	tween_rotate.tween_property(self, "rotation_degrees", 5, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", max_rotation * randf_range(0.1, 0.3) * rotate_direction, 0.05)
 	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
 	#tween.tween_property()
 
@@ -105,11 +109,15 @@ func released_effect():
 	# Bounce object smaller
 	tween.tween_property(self, "scale", Vector2(1,1), 1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	var tween_rotate: Tween = create_tween()
-	tween_rotate.tween_property(self, "rotation_degrees", 20, 0.05)
+	var max_rotation = randi_range(20, 30)
+	var rotate_direction = randi_range(0, 1)
+	if rotate_direction == 0:
+		rotate_direction = -1
+	tween_rotate.tween_property(self, "rotation_degrees", max_rotation * rotate_direction, 0.05)
 	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
-	tween_rotate.tween_property(self, "rotation_degrees", -10, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", max_rotation * randf_range(0.3, 0.6) * rotate_direction * -1, 0.05)
 	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
-	tween_rotate.tween_property(self, "rotation_degrees", 5, 0.05)
+	tween_rotate.tween_property(self, "rotation_degrees", max_rotation * randf_range(0.1, 0.3) * rotate_direction, 0.05)
 	tween_rotate.tween_property(self, "rotation_degrees", 0, 0.05)
 
 func scale_object(body: ScalableObject):

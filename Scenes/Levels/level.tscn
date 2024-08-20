@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://belg3ygdqvmwv"]
+[gd_scene load_steps=5 format=3 uid="uid://belg3ygdqvmwv"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_v0nyq"]
 [ext_resource type="Script" path="res://Scripts/weight_scale_tracker.gd" id="2_p0vxm"]
+[ext_resource type="AudioStream" uid="uid://f0kdrrwlmnd3" path="res://Audio/WinSound.wav" id="4_h0x6k"]
 [ext_resource type="FontFile" uid="uid://banw55tp6ocuu" path="res://Fonts/PixelOperator8-Bold.ttf" id="8_kx8ci"]
 
 [node name="Level" type="Node2D"]
@@ -24,14 +25,13 @@ script = ExtResource("2_p0vxm")
 
 [node name="Label" type="Label" parent="."]
 visible = false
-offset_left = -188.0
+offset_left = -397.0
 offset_top = -26.0
-offset_right = 214.0
+offset_right = 469.0
 offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("8_kx8ci")
 theme_override_font_sizes/font_size = 63
-text = "You win
-"
+text = "Level Complete!"
 vertical_alignment = 1
 
 [node name="TutorialLabel" type="Label" parent="."]
@@ -43,3 +43,6 @@ theme_override_fonts/font = ExtResource("8_kx8ci")
 theme_override_font_sizes/font_size = 32
 text = "'enter' to start level, 'r' to restart.
 "
+
+[node name="LevelWinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h0x6k")
