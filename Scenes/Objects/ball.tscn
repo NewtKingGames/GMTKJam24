@@ -25,10 +25,8 @@ scale = Vector2(3.59129, 3.59129)
 shape = SubResource("CircleShape2D_0nby0")
 
 [node name="GrowScaleParticleEffect" parent="." instance=ExtResource("3_21qf0")]
-visible = false
 
 [node name="ShrinkScaleParticleEffect" parent="." instance=ExtResource("4_kahem")]
-visible = false
 
 [node name="ImpactSound" type="AudioStreamPlayer2D" parent="."]
 

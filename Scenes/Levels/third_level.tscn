@@ -12,78 +12,80 @@
 [node name="ThirdLevel" instance=ExtResource("1_hvh6w")]
 next_scene = ExtResource("2_q2jl6")
 
-[node name="Camera2D" parent="." index="0"]
-zoom = Vector2(0.8, 0.8)
+[node name="OrangeLight" parent="." index="0" instance=ExtResource("8_f557k")]
+position = Vector2(348, -220)
+
+[node name="OrangeLight2" parent="." index="1" instance=ExtResource("8_f557k")]
+position = Vector2(-911, -285)
+scale = Vector2(1, 1)
+
+[node name="Camera2D" parent="." index="3"]
+position = Vector2(0, -3)
 
 [node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_0to08")]
-position = Vector2(-283, -290)
-rotation = -0.461547
+position = Vector2(-328, -316)
+rotation = -0.361915
 scale = Vector2(1.34708, 1.61589)
 
-[node name="Platform8" parent="Platforms" index="1" instance=ExtResource("2_0to08")]
-position = Vector2(291, 79)
-rotation = 0.189555
-scale = Vector2(2.24178, 1.37897)
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("2_0to08")]
+position = Vector2(-953, -470)
+rotation = 0.122149
+scale = Vector2(1.34708, 1.61589)
 
-[node name="Platform3" parent="Platforms" index="2" instance=ExtResource("2_0to08")]
-position = Vector2(-922, -13)
+[node name="Platform8" parent="Platforms" index="2" instance=ExtResource("2_0to08")]
+position = Vector2(274, 53)
+rotation = 0.118873
+scale = Vector2(1.18272, 1.37897)
+
+[node name="Platform3" parent="Platforms" index="3" instance=ExtResource("2_0to08")]
+position = Vector2(-914, -61)
 rotation = 0.294798
 scale = Vector2(2.08105, 1.37897)
 
-[node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_0to08")]
-position = Vector2(186, 282)
-rotation = 0.18151
+[node name="Platform4" parent="Platforms" index="4" instance=ExtResource("2_0to08")]
+position = Vector2(199, 215)
+rotation = 0.136183
 scale = Vector2(1.86624, 1.37897)
 
-[node name="Platform5" parent="Platforms" index="4" instance=ExtResource("2_0to08")]
-position = Vector2(-396, 273)
+[node name="Platform5" parent="Platforms" index="5" instance=ExtResource("2_0to08")]
+position = Vector2(-388, 225)
 rotation = 0.253397
 scale = Vector2(0.744984, 1.39183)
 
-[node name="Platform6" parent="Platforms" index="5" instance=ExtResource("2_0to08")]
-position = Vector2(-478, 173)
+[node name="Platform6" parent="Platforms" index="6" instance=ExtResource("2_0to08")]
+position = Vector2(-470, 125)
 rotation = 1.85028
 scale = Vector2(0.322573, 1.7051)
 
-[node name="Platform7" parent="Platforms" index="6" instance=ExtResource("2_0to08")]
-position = Vector2(-257, 234)
+[node name="Platform7" parent="Platforms" index="7" instance=ExtResource("2_0to08")]
+position = Vector2(-249, 186)
 rotation = 1.85028
 scale = Vector2(0.277743, 1.69407)
 
-[node name="Platform2" parent="Platforms" index="7" instance=ExtResource("2_0to08")]
-position = Vector2(-934, -494)
-rotation = 0.137413
-scale = Vector2(1.31415, 1.62183)
-
 [node name="Ball" parent="Balls" index="0" instance=ExtResource("3_4gnmb")]
-position = Vector2(-1158, -644)
+position = Vector2(-983, -565)
 
 [node name="Ball2" parent="Balls" index="1" instance=ExtResource("3_4gnmb")]
-position = Vector2(-130, -541)
+position = Vector2(-195, -458)
 
 [node name="ScaleZoneGrow" parent="Zones" index="0" instance=ExtResource("4_j2hdj")]
-position = Vector2(1085, -430)
+position = Vector2(928, -468)
 collision_layer = 1
 
 [node name="ScaleZoneGrow2" parent="Zones" index="1" instance=ExtResource("4_j2hdj")]
-position = Vector2(1085, -302)
+position = Vector2(928, -340)
 collision_layer = 1
 
 [node name="ScaleZoneShrink" parent="Zones" index="2" instance=ExtResource("5_erkah")]
-position = Vector2(1085, -174)
+position = Vector2(928, -212)
 collision_layer = 1
 
 [node name="ScaleZoneShrink2" parent="Zones" index="3" instance=ExtResource("5_erkah")]
-position = Vector2(1085, -46)
+position = Vector2(928, -84)
 collision_layer = 1
 
 [node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("3_12hwg")]
-position = Vector2(860, 433)
+position = Vector2(861, 344)
+rotation = -0.00114229
 scale = Vector2(5.36514, 3.81285)
-goal_weight = 4.0
-
-[node name="OrangeLight" parent="." index="10" instance=ExtResource("8_f557k")]
-position = Vector2(348, -220)
-
-[node name="OrangeLight2" parent="." index="11" instance=ExtResource("8_f557k")]
-position = Vector2(-911, -285)
+goal_weight = 8.0

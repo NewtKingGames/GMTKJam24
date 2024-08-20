@@ -1,12 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://belg3ygdqvmwv"]
+[gd_scene load_steps=6 format=3 uid="uid://belg3ygdqvmwv"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_v0nyq"]
+[ext_resource type="Texture2D" uid="uid://dww7lw0cpojtr" path="res://Sprites/chalkboardlast.png" id="2_j4g4b"]
 [ext_resource type="Script" path="res://Scripts/weight_scale_tracker.gd" id="2_p0vxm"]
 [ext_resource type="AudioStream" uid="uid://f0kdrrwlmnd3" path="res://Audio/WinSound.wav" id="4_h0x6k"]
 [ext_resource type="FontFile" uid="uid://banw55tp6ocuu" path="res://Fonts/PixelOperator8-Bold.ttf" id="8_kx8ci"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_v0nyq")
+
+[node name="background" type="Sprite2D" parent="."]
+light_mask = 0
+visibility_layer = 2
+scale = Vector2(3.41083, 2.97822)
+texture = ExtResource("2_j4g4b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -36,9 +43,9 @@ vertical_alignment = 1
 
 [node name="TutorialLabel" type="Label" parent="."]
 offset_left = -463.0
-offset_top = 548.0
+offset_top = 535.0
 offset_right = 1085.0
-offset_bottom = 580.0
+offset_bottom = 567.0
 theme_override_fonts/font = ExtResource("8_kx8ci")
 theme_override_font_sizes/font_size = 32
 text = "'enter' to start level, 'r' to restart.

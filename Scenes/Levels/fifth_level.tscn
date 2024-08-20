@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://du4ut16cujeca"]
+
+[ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_64qfb"]
+[ext_resource type="PackedScene" uid="uid://su8ld586qy81" path="res://Scenes/Objects/platform.tscn" id="2_t5c7k"]
+[ext_resource type="PackedScene" uid="uid://7brsp21cojoa" path="res://Scenes/Objects/breakable_platform.tscn" id="3_d0xxx"]
+
+[node name="fifth_level" instance=ExtResource("1_64qfb")]
+
+[node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_t5c7k")]
+position = Vector2(-718, -476)
+rotation = 0.266903
+
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("2_t5c7k")]
+position = Vector2(-210, -322)
+rotation = -0.201925
+
+[node name="Platform3" parent="Platforms" index="2" instance=ExtResource("2_t5c7k")]
+position = Vector2(650, -516)
+rotation = -0.218547
+
+[node name="BreakablePlatform" parent="Platforms" index="3" instance=ExtResource("3_d0xxx")]
+position = Vector2(225, -401)
+rotation = -0.261799
+scale = Vector2(1.11214, 0.65498)
