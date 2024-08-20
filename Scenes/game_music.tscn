@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://daj7rp6eyhcc0"]
+
+[ext_resource type="AudioStream" uid="uid://cpihgx8b1nkod" path="res://Audio/TiltedScalesLast.mp3" id="1_x6bm1"]
+
+[node name="GameMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_x6bm1")
+volume_db = -13.0
+autoplay = true
