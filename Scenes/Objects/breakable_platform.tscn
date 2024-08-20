@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://7brsp21cojoa"]
+[gd_scene load_steps=6 format=3 uid="uid://7brsp21cojoa"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/breakable_platform.gd" id="1_i8145"]
 [ext_resource type="Texture2D" uid="uid://cbq1t18wq1je7" path="res://Sprites/Breaking_Platform.png" id="2_qgnma"]
 [ext_resource type="PackedScene" uid="uid://ohvkenw5imen" path="res://Scenes/Objects/weight_area.tscn" id="3_5qek5"]
+[ext_resource type="AudioStream" uid="uid://bad8i8vuh2ar0" path="res://Audio/glass-break.mp3" id="4_shvnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6pk1"]
 
@@ -21,4 +22,5 @@ shape = SubResource("RectangleShape2D_y6pk1")
 position = Vector2(-0.25, -10)
 scale = Vector2(5.67631, 1.446)
 
-[node name="BreakSound" type="AudioStreamPlayer" parent="."]
+[node name="BreakSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_shvnu")

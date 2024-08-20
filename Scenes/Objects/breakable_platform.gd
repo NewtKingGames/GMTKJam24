@@ -1,9 +1,10 @@
 class_name BreakablePlatform extends StaticBody2D
 
 signal platform_broke(platform: BreakablePlatform)
-
+@onready var collision_shape_2d = $CollisionShape2D
 @onready var break_sound = $BreakSound
 @onready var weight_area = $WeightArea
+@onready var sprite_2d = $Sprite2D
 
 @export var weight_limit: float
 
@@ -23,4 +24,8 @@ func on_area_weight_changed(weight: float):
 
 func break_platform():
 	platform_broke.emit(self)
+	collision_shape_2d.set_deferred("disabled", true)
+	sprite_2d.visible = false
+	break_sound.play()
+	await get_tree().create_timer(1.3).timeout
 	queue_free()
