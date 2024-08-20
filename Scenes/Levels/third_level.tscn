@@ -20,8 +20,8 @@ rotation = -0.461547
 scale = Vector2(1.34708, 1.61589)
 
 [node name="Platform8" parent="Platforms" index="1" instance=ExtResource("2_0to08")]
-position = Vector2(309, 124)
-rotation = 0.23715
+position = Vector2(291, 79)
+rotation = 0.189555
 scale = Vector2(2.24178, 1.37897)
 
 [node name="Platform3" parent="Platforms" index="2" instance=ExtResource("2_0to08")]
@@ -30,8 +30,8 @@ rotation = 0.294798
 scale = Vector2(2.08105, 1.37897)
 
 [node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_0to08")]
-position = Vector2(138, 295)
-rotation = 0.253397
+position = Vector2(186, 282)
+rotation = 0.18151
 scale = Vector2(1.86624, 1.37897)
 
 [node name="Platform5" parent="Platforms" index="4" instance=ExtResource("2_0to08")]
@@ -77,6 +77,6 @@ position = Vector2(1085, -46)
 collision_layer = 1
 
 [node name="BasicScalePlatform" parent="Scales" index="0" instance=ExtResource("3_12hwg")]
-position = Vector2(836, 452)
+position = Vector2(860, 433)
 scale = Vector2(5.36514, 3.81285)
 goal_weight = 4.0

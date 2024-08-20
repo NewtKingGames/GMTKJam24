@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/scale_zone_grow.gd" id="2_4v08c"]
 
 [node name="ScaleZoneGrow" instance=ExtResource("1_nwi3w")]
-modulate = Color(0, 0.741176, 0, 1)
+modulate = Color(0, 0.741176, 0, 0.486275)
 collision_mask = 5
 script = ExtResource("2_4v08c")
 

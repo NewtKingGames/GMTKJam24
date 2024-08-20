@@ -46,3 +46,7 @@ text = "'enter' to start level, 'r' to restart.
 
 [node name="LevelWinSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_h0x6k")
+
+[node name="DarkeningLight" type="DirectionalLight2D" parent="."]
+energy = 0.3
+blend_mode = 1

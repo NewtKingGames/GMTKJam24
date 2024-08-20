@@ -2,17 +2,20 @@ class_name Ball extends ScalableObject
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var light_occluder_2d = $LightOccluder2D
 
 @onready var impact_sound = $ImpactSound
 @onready var roll_sound = $RollSound
 
 
 var sprite_starting_scale: Vector2
+var light_occluder_starting_scale: Vector2
 var collision_shape_starting_scale: Vector2
 
 func _ready():
 	base_weight = 4
 	sprite_starting_scale = sprite_2d.scale
+	light_occluder_starting_scale = light_occluder_2d.scale
 	collision_shape_starting_scale = collision_shape_2d.scale
 	# Set all balls default scale to 1
 	if current_scale == 0:
@@ -29,5 +32,6 @@ func update_scale_attributes_instantly():
 func _update_scale_attributes(duration: float):
 	var tween_properties = create_tween()
 	tween_properties.parallel().tween_property(sprite_2d, "scale", sprite_starting_scale* current_scale, duration)
+	tween_properties.parallel().tween_property(light_occluder_2d, "scale", light_occluder_starting_scale* current_scale, duration)
 	await tween_properties.parallel().tween_property(collision_shape_2d, "scale", collision_shape_starting_scale*current_scale, duration).finished
 	super.update_scale_attributes() # Calling parent class stops the particle effects immediaetly

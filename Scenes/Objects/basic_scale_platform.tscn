@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://do0jxgdl0c466"]
+[gd_scene load_steps=13 format=3 uid="uid://do0jxgdl0c466"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/basic_scale_platform.gd" id="1_grtd1"]
 [ext_resource type="Script" path="res://Scenes/Objects/scale_weight_label.gd" id="3_b0esl"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://4vpctbfopgof" path="res://Sprites/scale-top.png" id="8_ihhl5"]
 [ext_resource type="FontFile" uid="uid://c7k0swck6fxti" path="res://Fonts/PixelOperator8.ttf" id="9_0fmx5"]
 [ext_resource type="AudioStream" uid="uid://cnoglygfdx732" path="res://Audio/scale-ding.mp3" id="10_al8im"]
+[ext_resource type="Texture2D" uid="uid://d2iys8uwpxqp7" path="res://Sprites/flashlight_reverse.png" id="11_ahffb"]
 [ext_resource type="AudioStream" uid="uid://cbf482y8p183i" path="res://Audio/error_sound.mp3" id="11_hmcvf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixf3m"]
@@ -71,5 +72,12 @@ text = "Goal: 0
 "
 horizontal_alignment = 1
 script = ExtResource("4_oykgq")
+
+[node name="GoalWeightLight" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(0, 34)
+color = Color(1, 0.443137, 0.156863, 1)
+texture = ExtResource("11_ahffb")
+texture_scale = 0.25
 
 [connection signal="area_weight_changed" from="MoveableObjects/WeightArea" to="ScaleWeightDisplay" method="_on_basic_scale_platform_scale_weight_changed"]

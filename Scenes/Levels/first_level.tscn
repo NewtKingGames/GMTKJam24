@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6miisatlkaeg"]
+[gd_scene load_steps=9 format=3 uid="uid://b6miisatlkaeg"]
 
 [ext_resource type="PackedScene" uid="uid://belg3ygdqvmwv" path="res://Scenes/Levels/level.tscn" id="1_76a7u"]
 [ext_resource type="PackedScene" uid="uid://bnkeyduwbqc7x" path="res://Scenes/Levels/second_level.tscn" id="2_6hn8q"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do0jxgdl0c466" path="res://Scenes/Objects/basic_scale_platform.tscn" id="3_jo2ae"]
 [ext_resource type="PackedScene" uid="uid://db1sld5xkn1qp" path="res://Scenes/Objects/scale_zone_grow.tscn" id="4_368d0"]
 [ext_resource type="FontFile" uid="uid://banw55tp6ocuu" path="res://Fonts/PixelOperator8-Bold.ttf" id="6_xqq46"]
+[ext_resource type="Texture2D" uid="uid://dhp2ajoifcy5a" path="res://Sprites/flashlight.png" id="8_anbwk"]
 
 [node name="FirstLevel" instance=ExtResource("1_76a7u")]
 next_scene = ExtResource("2_6hn8q")
@@ -66,3 +67,31 @@ theme_override_fonts/font = ExtResource("6_xqq46")
 theme_override_font_sizes/font_size = 24
 text = "Some areas are locked and cannot be moved
 "
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="12"]
+position = Vector2(-473, -506)
+rotation = -2.50573
+color = Color(0.901961, 0.419608, 0.196078, 1)
+energy = 6.0
+shadow_enabled = true
+texture = ExtResource("8_anbwk")
+texture_scale = 2.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="." index="13"]
+position = Vector2(53, -321)
+rotation = -3.14159
+scale = Vector2(1.44, 0.92)
+color = Color(0.901961, 0.419608, 0.196078, 1)
+energy = 6.0
+shadow_enabled = true
+texture = ExtResource("8_anbwk")
+texture_scale = 2.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="." index="14"]
+position = Vector2(585, -459)
+rotation = 2.50629
+color = Color(0.901961, 0.419608, 0.196078, 1)
+energy = 6.0
+shadow_enabled = true
+texture = ExtResource("8_anbwk")
+texture_scale = 2.0

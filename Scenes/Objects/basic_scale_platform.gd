@@ -5,6 +5,7 @@ class_name ScalePlatform extends Node2D
 @onready var error_sound = $ErrorSound
 @onready var scale_weight_display = $ScaleGoalWeightLabel
 @onready var moveable_objects = $MoveableObjects
+@onready var goal_weight_light = $GoalWeightLight
 
 signal scale_goal_hit()
 signal scale_goal_lost()
@@ -47,10 +48,12 @@ func play_goal_hit_effects():
 	scale_weight_display.set("theme_override_colors/font_color", Color.LIME_GREEN)
 	await get_tree().create_timer(.1).timeout
 	ding_sound.pitch_scale = randf_range(0.95, 1.2)
+	goal_weight_light.visible = true
 	ding_sound.play()
 
 func play_goal_lost_effects():
 	scale_weight_display.set("theme_override_colors/font_color", Color.ORANGE_RED)
 	await get_tree().create_timer(.1).timeout
+	goal_weight_light.visible = false
 	error_sound.play()
 	
