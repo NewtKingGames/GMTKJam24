@@ -76,7 +76,7 @@ script = ExtResource("4_oykgq")
 [node name="GoalWeightLight" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(0, 34)
-color = Color(1, 0.443137, 0.156863, 1)
+color = Color(0.917096, 0.662989, 0.241081, 1)
 texture = ExtResource("11_ahffb")
 texture_scale = 0.25
 

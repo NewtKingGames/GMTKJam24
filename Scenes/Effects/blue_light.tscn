@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ya0tylysc5mc"]
+
+[ext_resource type="Texture2D" uid="uid://d2iys8uwpxqp7" path="res://Sprites/flashlight_reverse.png" id="1_wwflt"]
+
+[node name="BlueLight" type="PointLight2D"]
+color = Color(0.0980392, 0.772549, 1, 1)
+texture = ExtResource("1_wwflt")
+texture_scale = 15.0

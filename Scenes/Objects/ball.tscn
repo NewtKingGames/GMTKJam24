@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1c5sdqrwiuri"]
+[gd_scene load_steps=6 format=3 uid="uid://d1c5sdqrwiuri"]
 
 [ext_resource type="Texture2D" uid="uid://chd0e8h2jw860" path="res://Sprites/Ball 01.png" id="1_atq4e"]
 [ext_resource type="Script" path="res://Scenes/Objects/ball.gd" id="1_nsfd7"]
@@ -7,11 +7,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0nby0"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2fjuj"]
-polygon = PackedVector2Array(4, -36, 9, -35, 16, -32, 23, -27, 28, -22, 32, -16, 35, -10, 36, -5, 36, 5, 35, 10, 33, 15, 30, 20, 25, 26, 19, 31, 12, 34, 5, 36, 0, 36, -5, 36, -10, 35, -15, 33, -22, 28, -27, 24, -31, 18, -34, 13, -36, 5, -36, -6, -34, -11, -31, -18, -27, -24, -21, -29, -15, -33, -9, -35, -4, -36)
-
 [node name="Ball" type="RigidBody2D"]
-light_mask = 2
 collision_layer = 4
 collision_mask = 7
 gravity_scale = 0.5
@@ -37,6 +33,3 @@ visible = false
 [node name="ImpactSound" type="AudioStreamPlayer2D" parent="."]
 
 [node name="RollSound" type="AudioStreamPlayer2D" parent="."]
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_2fjuj")

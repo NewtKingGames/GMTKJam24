@@ -26,7 +26,7 @@ shape = SubResource("RectangleShape2D_7ny1o")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
-energy = 0.2
+energy = 2.0
 texture = ExtResource("3_65k4s")
 
 [node name="LockIconSprite" type="Sprite2D" parent="."]

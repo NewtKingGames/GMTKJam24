@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d30cdwt146pt1"]
+
+[ext_resource type="Texture2D" uid="uid://d2iys8uwpxqp7" path="res://Sprites/flashlight_reverse.png" id="1_ivmmv"]
+
+[node name="OrangeLight" type="PointLight2D"]
+position = Vector2(0, -248)
+color = Color(1, 0.415686, 0.243137, 1)
+texture = ExtResource("1_ivmmv")
+texture_scale = 15.0
